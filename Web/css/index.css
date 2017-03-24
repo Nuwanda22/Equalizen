@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../imgs/guitar-background.jpeg);
+    background-size: cover;
+}
+
+#cover{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0, 0.4);
+    position: absolute;
+    top : 0;
+    left: 0;
+    text-align: center;
+}
+
+h1{
+    font-size: 8rem;
+    color: #fff;
+    margin-top: 13rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+h3{
+    display: inline-block;
+    font-size: 5rem;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.5rem;
+}
+
+nav{
+    display: inline-block;
+}
+
+nav:hover i::before{
+    content: 'X';
+    color: #fff;
+}
+
+
+i::before{
+    display: inline-block;
+    font-size: 3rem;
+    color: #fff;
+    margin: 3rem;
+}
