@@ -4,9 +4,7 @@
              xmlns:local="clr-namespace:Equalizen"
              x:Class="Equalizen.MainPage">
 
-    <StackLayout>
-        <WebView x:Name="Browser"
-                 HeightRequest="500" />
-    </StackLayout>
-
+    <Label Text="Equalizen"
+           VerticalOptions="CenterAndExpand"
+           HorizontalOptions="CenterAndExpand" />
 </ContentPage>
