@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+li{
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 0.5px solid #000;
+    text-align: center;
+    min-width: 5.93rem;
+}
+
+iframe{
+    width: 100vw;
+    height: 94vh;
+    border: 1px #000 solid;
+}

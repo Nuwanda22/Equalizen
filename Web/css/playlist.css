@@ -1,0 +1,38 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    width: 21rem;;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000;
+    overflow-y: scroll;
+    list-style: none;
+}
+
+li{
+    border-bottom: 1px solid #000;
+    height: 5rem;
+}
+img{
+    float: left;
+    height: 100%;
+}
+
+span{
+    font-size: 1rem;
+    float: left;
+    display: flex;
+    padding-left: 8px;
+    justify-content: center;
+    flex-direction: column;
+    width: 15rem;
+    height: 100%;
+}
