@@ -1,2 +1,2 @@
 # Equalizen
-Eqalizing each song.
+Equalizing each song.

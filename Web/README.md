@@ -1,2 +1,2 @@
 # Equalizen Web
-Eqalizing each song in web.
+Equalizing each song in web.

@@ -1,2 +1,2 @@
 # Equalizen iOS
-Eqalizing each song in iOS.
+Equalizing each song in iOS.
