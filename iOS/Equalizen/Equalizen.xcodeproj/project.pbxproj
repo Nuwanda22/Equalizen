@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5393544D1E8C820300412879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5393544C1E8C820300412879 /* AppDelegate.swift */; };
+		5393544F1E8C820300412879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5393544E1E8C820300412879 /* ViewController.swift */; };
+		539354521E8C820300412879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539354501E8C820300412879 /* Main.storyboard */; };
+		539354551E8C820300412879 /* Equalizen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 539354531E8C820300412879 /* Equalizen.xcdatamodeld */; };
+		539354571E8C820300412879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539354561E8C820300412879 /* Assets.xcassets */; };
+		5393545A1E8C820300412879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539354581E8C820300412879 /* LaunchScreen.storyboard */; };
+		539354651E8C820300412879 /* EqualizenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539354641E8C820300412879 /* EqualizenTests.swift */; };
+		539354701E8C820300412879 /* EqualizenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5393546F1E8C820300412879 /* EqualizenUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		539354611E8C820300412879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 539354411E8C820300412879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 539354481E8C820300412879;
+			remoteInfo = Equalizen;
+		};
+		5393546C1E8C820300412879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 539354411E8C820300412879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 539354481E8C820300412879;
+			remoteInfo = Equalizen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		539354491E8C820300412879 /* Equalizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equalizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5393544C1E8C820300412879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5393544E1E8C820300412879 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		539354511E8C820300412879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		539354541E8C820300412879 /* Equalizen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Equalizen.xcdatamodel; sourceTree = "<group>"; };
+		539354561E8C820300412879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		539354591E8C820300412879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5393545B1E8C820300412879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		539354601E8C820300412879 /* EqualizenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EqualizenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		539354641E8C820300412879 /* EqualizenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizenTests.swift; sourceTree = "<group>"; };
+		539354661E8C820300412879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5393546B1E8C820300412879 /* EqualizenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EqualizenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5393546F1E8C820300412879 /* EqualizenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizenUITests.swift; sourceTree = "<group>"; };
+		539354711E8C820300412879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		539354461E8C820300412879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5393545D1E8C820300412879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		539354681E8C820300412879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		539354401E8C820300412879 = {
+			isa = PBXGroup;
+			children = (
+				5393544B1E8C820300412879 /* Equalizen */,
+				539354631E8C820300412879 /* EqualizenTests */,
+				5393546E1E8C820300412879 /* EqualizenUITests */,
+				5393544A1E8C820300412879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5393544A1E8C820300412879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				539354491E8C820300412879 /* Equalizen.app */,
+				539354601E8C820300412879 /* EqualizenTests.xctest */,
+				5393546B1E8C820300412879 /* EqualizenUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5393544B1E8C820300412879 /* Equalizen */ = {
+			isa = PBXGroup;
+			children = (
+				5393544C1E8C820300412879 /* AppDelegate.swift */,
+				5393544E1E8C820300412879 /* ViewController.swift */,
+				539354501E8C820300412879 /* Main.storyboard */,
+				539354561E8C820300412879 /* Assets.xcassets */,
+				539354581E8C820300412879 /* LaunchScreen.storyboard */,
+				5393545B1E8C820300412879 /* Info.plist */,
+				539354531E8C820300412879 /* Equalizen.xcdatamodeld */,
+			);
+			path = Equalizen;
+			sourceTree = "<group>";
+		};
+		539354631E8C820300412879 /* EqualizenTests */ = {
+			isa = PBXGroup;
+			children = (
+				539354641E8C820300412879 /* EqualizenTests.swift */,
+				539354661E8C820300412879 /* Info.plist */,
+			);
+			path = EqualizenTests;
+			sourceTree = "<group>";
+		};
+		5393546E1E8C820300412879 /* EqualizenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5393546F1E8C820300412879 /* EqualizenUITests.swift */,
+				539354711E8C820300412879 /* Info.plist */,
+			);
+			path = EqualizenUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		539354481E8C820300412879 /* Equalizen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 539354741E8C820300412879 /* Build configuration list for PBXNativeTarget "Equalizen" */;
+			buildPhases = (
+				539354451E8C820300412879 /* Sources */,
+				539354461E8C820300412879 /* Frameworks */,
+				539354471E8C820300412879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Equalizen;
+			productName = Equalizen;
+			productReference = 539354491E8C820300412879 /* Equalizen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5393545F1E8C820300412879 /* EqualizenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 539354771E8C820300412879 /* Build configuration list for PBXNativeTarget "EqualizenTests" */;
+			buildPhases = (
+				5393545C1E8C820300412879 /* Sources */,
+				5393545D1E8C820300412879 /* Frameworks */,
+				5393545E1E8C820300412879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				539354621E8C820300412879 /* PBXTargetDependency */,
+			);
+			name = EqualizenTests;
+			productName = EqualizenTests;
+			productReference = 539354601E8C820300412879 /* EqualizenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5393546A1E8C820300412879 /* EqualizenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5393547A1E8C820300412879 /* Build configuration list for PBXNativeTarget "EqualizenUITests" */;
+			buildPhases = (
+				539354671E8C820300412879 /* Sources */,
+				539354681E8C820300412879 /* Frameworks */,
+				539354691E8C820300412879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5393546D1E8C820300412879 /* PBXTargetDependency */,
+			);
+			name = EqualizenUITests;
+			productName = EqualizenUITests;
+			productReference = 5393546B1E8C820300412879 /* EqualizenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		539354411E8C820300412879 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = altair;
+				TargetAttributes = {
+					539354481E8C820300412879 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XXY8NHPRX4;
+						ProvisioningStyle = Automatic;
+					};
+					5393545F1E8C820300412879 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XXY8NHPRX4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 539354481E8C820300412879;
+					};
+					5393546A1E8C820300412879 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XXY8NHPRX4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 539354481E8C820300412879;
+					};
+				};
+			};
+			buildConfigurationList = 539354441E8C820300412879 /* Build configuration list for PBXProject "Equalizen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 539354401E8C820300412879;
+			productRefGroup = 5393544A1E8C820300412879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				539354481E8C820300412879 /* Equalizen */,
+				5393545F1E8C820300412879 /* EqualizenTests */,
+				5393546A1E8C820300412879 /* EqualizenUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		539354471E8C820300412879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5393545A1E8C820300412879 /* LaunchScreen.storyboard in Resources */,
+				539354571E8C820300412879 /* Assets.xcassets in Resources */,
+				539354521E8C820300412879 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5393545E1E8C820300412879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		539354691E8C820300412879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		539354451E8C820300412879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5393544F1E8C820300412879 /* ViewController.swift in Sources */,
+				539354551E8C820300412879 /* Equalizen.xcdatamodeld in Sources */,
+				5393544D1E8C820300412879 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5393545C1E8C820300412879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539354651E8C820300412879 /* EqualizenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		539354671E8C820300412879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539354701E8C820300412879 /* EqualizenUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		539354621E8C820300412879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 539354481E8C820300412879 /* Equalizen */;
+			targetProxy = 539354611E8C820300412879 /* PBXContainerItemProxy */;
+		};
+		5393546D1E8C820300412879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 539354481E8C820300412879 /* Equalizen */;
+			targetProxy = 5393546C1E8C820300412879 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		539354501E8C820300412879 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				539354511E8C820300412879 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		539354581E8C820300412879 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				539354591E8C820300412879 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		539354721E8C820300412879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		539354731E8C820300412879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		539354751E8C820300412879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = Equalizen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.Equalizen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		539354761E8C820300412879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = Equalizen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.Equalizen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		539354781E8C820300412879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualizenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualizenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equalizen.app/Equalizen";
+			};
+			name = Debug;
+		};
+		539354791E8C820300412879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualizenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualizenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equalizen.app/Equalizen";
+			};
+			name = Release;
+		};
+		5393547B1E8C820300412879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualizenUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualizenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Equalizen;
+			};
+			name = Debug;
+		};
+		5393547C1E8C820300412879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualizenUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualizenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Equalizen;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		539354441E8C820300412879 /* Build configuration list for PBXProject "Equalizen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				539354721E8C820300412879 /* Debug */,
+				539354731E8C820300412879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		539354741E8C820300412879 /* Build configuration list for PBXNativeTarget "Equalizen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				539354751E8C820300412879 /* Debug */,
+				539354761E8C820300412879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		539354771E8C820300412879 /* Build configuration list for PBXNativeTarget "EqualizenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				539354781E8C820300412879 /* Debug */,
+				539354791E8C820300412879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5393547A1E8C820300412879 /* Build configuration list for PBXNativeTarget "EqualizenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5393547B1E8C820300412879 /* Debug */,
+				5393547C1E8C820300412879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		539354531E8C820300412879 /* Equalizen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				539354541E8C820300412879 /* Equalizen.xcdatamodel */,
+			);
+			currentVersion = 539354541E8C820300412879 /* Equalizen.xcdatamodel */;
+			path = Equalizen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 539354411E8C820300412879 /* Project object */;
+}
