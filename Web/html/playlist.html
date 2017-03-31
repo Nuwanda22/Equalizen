@@ -4,29 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/playlist.css">
 </head>
 
 <body>
-    <ul>
-        <li><img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy album"><span>Last Fantasy</span></li>
-        <li><img src="../imgs/flower-bookmark.jpeg" alt="Last Fantasy album"><span>꽃갈피</span></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <nav>
+        <ul class="playlist">
+            <li class="playlist-li"><img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy album" class="list-img"><span class="list-title">Last Fantasy</span></li>
+            <li class="playlist-li"><img src="../imgs/flower-bookmark.jpeg" alt="Last Fantasy album" class="list-img"><span class="list-title">꽃갈피</span></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+            <li class="playlist-li"></li>
+        </ul>
+    </nav>
+    <section>
+        <img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy" id="playlist-cover">
+        <h1>Last Fantasy</h1>
+        <span id="playlist-description">Last Fantasy is IU second album</span>
+        <button id="play-btn"> <i class="fa fa-play" aria-hidden="true"></i> Play</button>
+        <button>Bookmark</button>
+        <ul class="songlist">
+            <li class="songlist-li">
+                <span class="song-number">No.</span>
+                <span class="song-title">곡명</span>
+                <span class="song-time">시간</span>
+                <span class="song-artist">아티스트</span>
+                <span class="song-album">앨범</span>
+            </li>
+            <li class="songlist-li">
+                <span class="song-number">1</span>
+                <span class="song-title">너랑 나</span>
+                <span class="song-time">3 : 31</span>
+                <span class="song-artist">IU</span>
+                <span class="song-album">Last Fantasy</span>
+            </li>
+            <li class="songlist-li">
+                <span class="song-number">2</span>
+                <span class="song-title">비밀</span>
+                <span class="song-time">4 : 27</span>
+                <span class="song-artist">IU</span>
+                <span class="song-album">Last Fantasy</span>
+            </li>
+        </ul>
+    </section>
 </body>
 
 </html>
