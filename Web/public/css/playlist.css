@@ -26,7 +26,7 @@ ul{
 
 nav{
     display: inline-block;
-    width: 20%;
+    width: 20vw;
     float: left;
 }
 
@@ -54,8 +54,9 @@ nav{
     height: 100%;
 }
 
-section{
+#playlist-info{
     display: inline-block;
+    float: left;
     width: 55vw;
     height: 100vh;
     border-right: 1px solid #000;
@@ -116,4 +117,11 @@ td{
 }
 .songlist-li > .song-album{
     min-width: 17vw;
+}
+
+#song-info{
+    float: left;
+    display: inline-block;
+    height: 100vh;
+    width: 24vw;
 }

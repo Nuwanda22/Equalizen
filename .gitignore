@@ -584,3 +584,6 @@ build
 # BizTalk build output
 
 # End of https://www.gitignore.io/api/visualstudio,macos,swift,webstorm,xcode,csharp
+
+# npm node_modules
+node_modules/
