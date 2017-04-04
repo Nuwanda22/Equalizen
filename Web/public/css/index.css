@@ -23,7 +23,8 @@ body{
 h1{
     font-size: 8rem;
     color: #fff;
-    margin-top: 13rem;
+    margin-top: 15rem;
+    margin-bottom: 3rem;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -33,21 +34,16 @@ h3{
     color: #fff;
     border: 1px solid #fff;
     padding: 0.5rem;
+    padding-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+h3:hover{
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
 }
 
 nav{
     display: inline-block;
-}
-
-nav:hover i::before{
-    content: 'X';
-    color: #fff;
-}
-
-
-i::before{
-    display: inline-block;
-    font-size: 3rem;
-    color: #fff;
-    margin: 3rem;
 }
