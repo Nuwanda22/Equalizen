@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5369F1261E947E3800333187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369F1251E947E3800333187 /* AppDelegate.swift */; };
+		5369F1281E947E3800333187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369F1271E947E3800333187 /* ViewController.swift */; };
+		5369F12B1E947E3800333187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5369F1291E947E3800333187 /* Main.storyboard */; };
+		5369F12E1E947E3800333187 /* Equalier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5369F12C1E947E3800333187 /* Equalier.xcdatamodeld */; };
+		5369F1301E947E3800333187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5369F12F1E947E3800333187 /* Assets.xcassets */; };
+		5369F1331E947E3800333187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5369F1311E947E3800333187 /* LaunchScreen.storyboard */; };
+		5369F13E1E947E3800333187 /* EqualierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369F13D1E947E3800333187 /* EqualierTests.swift */; };
+		5369F1491E947E3800333187 /* EqualierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369F1481E947E3800333187 /* EqualierUITests.swift */; };
+		5369F1691E9484D100333187 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5369F1681E9484D100333187 /* sample.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5369F13A1E947E3800333187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5369F11A1E947E3800333187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5369F1211E947E3800333187;
+			remoteInfo = Equalier;
+		};
+		5369F1451E947E3800333187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5369F11A1E947E3800333187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5369F1211E947E3800333187;
+			remoteInfo = Equalier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5369F1221E947E3800333187 /* Equalizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equalizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5369F1251E947E3800333187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5369F1271E947E3800333187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5369F12A1E947E3800333187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5369F12D1E947E3800333187 /* Equalier.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Equalier.xcdatamodel; sourceTree = "<group>"; };
+		5369F12F1E947E3800333187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5369F1321E947E3800333187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5369F1341E947E3800333187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5369F1391E947E3800333187 /* EqualizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EqualizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5369F13D1E947E3800333187 /* EqualierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualierTests.swift; sourceTree = "<group>"; };
+		5369F13F1E947E3800333187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5369F1441E947E3800333187 /* EqualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EqualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5369F1481E947E3800333187 /* EqualierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualierUITests.swift; sourceTree = "<group>"; };
+		5369F14A1E947E3800333187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5369F1681E9484D100333187 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5369F11F1E947E3800333187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5369F1361E947E3800333187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5369F1411E947E3800333187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5369F1191E947E3800333187 = {
+			isa = PBXGroup;
+			children = (
+				5369F1241E947E3800333187 /* Equalier */,
+				5369F13C1E947E3800333187 /* EqualierTests */,
+				5369F1471E947E3800333187 /* EqualierUITests */,
+				5369F1231E947E3800333187 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5369F1231E947E3800333187 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5369F1221E947E3800333187 /* Equalizer.app */,
+				5369F1391E947E3800333187 /* EqualizerTests.xctest */,
+				5369F1441E947E3800333187 /* EqualizerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5369F1241E947E3800333187 /* Equalier */ = {
+			isa = PBXGroup;
+			children = (
+				5369F16A1E9484D900333187 /* Audio Source */,
+				5369F1251E947E3800333187 /* AppDelegate.swift */,
+				5369F1271E947E3800333187 /* ViewController.swift */,
+				5369F1291E947E3800333187 /* Main.storyboard */,
+				5369F12F1E947E3800333187 /* Assets.xcassets */,
+				5369F1311E947E3800333187 /* LaunchScreen.storyboard */,
+				5369F1341E947E3800333187 /* Info.plist */,
+				5369F12C1E947E3800333187 /* Equalier.xcdatamodeld */,
+			);
+			path = Equalier;
+			sourceTree = "<group>";
+		};
+		5369F13C1E947E3800333187 /* EqualierTests */ = {
+			isa = PBXGroup;
+			children = (
+				5369F13D1E947E3800333187 /* EqualierTests.swift */,
+				5369F13F1E947E3800333187 /* Info.plist */,
+			);
+			path = EqualierTests;
+			sourceTree = "<group>";
+		};
+		5369F1471E947E3800333187 /* EqualierUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5369F1481E947E3800333187 /* EqualierUITests.swift */,
+				5369F14A1E947E3800333187 /* Info.plist */,
+			);
+			path = EqualierUITests;
+			sourceTree = "<group>";
+		};
+		5369F16A1E9484D900333187 /* Audio Source */ = {
+			isa = PBXGroup;
+			children = (
+				5369F1681E9484D100333187 /* sample.mp3 */,
+			);
+			name = "Audio Source";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5369F1211E947E3800333187 /* Equalizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5369F14D1E947E3800333187 /* Build configuration list for PBXNativeTarget "Equalizer" */;
+			buildPhases = (
+				5369F11E1E947E3800333187 /* Sources */,
+				5369F11F1E947E3800333187 /* Frameworks */,
+				5369F1201E947E3800333187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Equalizer;
+			productName = Equalier;
+			productReference = 5369F1221E947E3800333187 /* Equalizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5369F1381E947E3800333187 /* EqualizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5369F1501E947E3800333187 /* Build configuration list for PBXNativeTarget "EqualizerTests" */;
+			buildPhases = (
+				5369F1351E947E3800333187 /* Sources */,
+				5369F1361E947E3800333187 /* Frameworks */,
+				5369F1371E947E3800333187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5369F13B1E947E3800333187 /* PBXTargetDependency */,
+			);
+			name = EqualizerTests;
+			productName = EqualierTests;
+			productReference = 5369F1391E947E3800333187 /* EqualizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5369F1431E947E3800333187 /* EqualizerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5369F1531E947E3800333187 /* Build configuration list for PBXNativeTarget "EqualizerUITests" */;
+			buildPhases = (
+				5369F1401E947E3800333187 /* Sources */,
+				5369F1411E947E3800333187 /* Frameworks */,
+				5369F1421E947E3800333187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5369F1461E947E3800333187 /* PBXTargetDependency */,
+			);
+			name = EqualizerUITests;
+			productName = EqualierUITests;
+			productReference = 5369F1441E947E3800333187 /* EqualizerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5369F11A1E947E3800333187 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = altair;
+				TargetAttributes = {
+					5369F1211E947E3800333187 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = XXY8NHPRX4;
+						ProvisioningStyle = Automatic;
+					};
+					5369F1381E947E3800333187 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = XXY8NHPRX4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5369F1211E947E3800333187;
+					};
+					5369F1431E947E3800333187 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = XXY8NHPRX4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5369F1211E947E3800333187;
+					};
+				};
+			};
+			buildConfigurationList = 5369F11D1E947E3800333187 /* Build configuration list for PBXProject "Equalizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5369F1191E947E3800333187;
+			productRefGroup = 5369F1231E947E3800333187 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5369F1211E947E3800333187 /* Equalizer */,
+				5369F1381E947E3800333187 /* EqualizerTests */,
+				5369F1431E947E3800333187 /* EqualizerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5369F1201E947E3800333187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5369F1691E9484D100333187 /* sample.mp3 in Resources */,
+				5369F1331E947E3800333187 /* LaunchScreen.storyboard in Resources */,
+				5369F1301E947E3800333187 /* Assets.xcassets in Resources */,
+				5369F12B1E947E3800333187 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5369F1371E947E3800333187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5369F1421E947E3800333187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5369F11E1E947E3800333187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5369F1281E947E3800333187 /* ViewController.swift in Sources */,
+				5369F1261E947E3800333187 /* AppDelegate.swift in Sources */,
+				5369F12E1E947E3800333187 /* Equalier.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5369F1351E947E3800333187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5369F13E1E947E3800333187 /* EqualierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5369F1401E947E3800333187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5369F1491E947E3800333187 /* EqualierUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5369F13B1E947E3800333187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5369F1211E947E3800333187 /* Equalizer */;
+			targetProxy = 5369F13A1E947E3800333187 /* PBXContainerItemProxy */;
+		};
+		5369F1461E947E3800333187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5369F1211E947E3800333187 /* Equalizer */;
+			targetProxy = 5369F1451E947E3800333187 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5369F1291E947E3800333187 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5369F12A1E947E3800333187 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5369F1311E947E3800333187 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5369F1321E947E3800333187 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5369F14B1E947E3800333187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5369F14C1E947E3800333187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5369F14E1E947E3800333187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = Equalier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.Equalier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5369F14F1E947E3800333187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = Equalier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.Equalier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5369F1511E947E3800333187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equalizer.app/Equalizer";
+			};
+			name = Debug;
+		};
+		5369F1521E947E3800333187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equalizer.app/Equalizer";
+			};
+			name = Release;
+		};
+		5369F1541E947E3800333187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Equalier;
+			};
+			name = Debug;
+		};
+		5369F1551E947E3800333187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XXY8NHPRX4;
+				INFOPLIST_FILE = EqualierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = altair.EqualierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Equalier;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5369F11D1E947E3800333187 /* Build configuration list for PBXProject "Equalizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5369F14B1E947E3800333187 /* Debug */,
+				5369F14C1E947E3800333187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5369F14D1E947E3800333187 /* Build configuration list for PBXNativeTarget "Equalizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5369F14E1E947E3800333187 /* Debug */,
+				5369F14F1E947E3800333187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5369F1501E947E3800333187 /* Build configuration list for PBXNativeTarget "EqualizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5369F1511E947E3800333187 /* Debug */,
+				5369F1521E947E3800333187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5369F1531E947E3800333187 /* Build configuration list for PBXNativeTarget "EqualizerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5369F1541E947E3800333187 /* Debug */,
+				5369F1551E947E3800333187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5369F12C1E947E3800333187 /* Equalier.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5369F12D1E947E3800333187 /* Equalier.xcdatamodel */,
+			);
+			currentVersion = 5369F12D1E947E3800333187 /* Equalier.xcdatamodel */;
+			path = Equalier.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5369F11A1E947E3800333187 /* Project object */;
+}
