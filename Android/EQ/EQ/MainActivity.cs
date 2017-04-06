@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Media;
 using Android.Media.Audiofx;
 using Android.Net;
@@ -8,39 +9,41 @@ using Android.Widget;
 
 namespace EQ
 {
-    [Activity(Label = "EQ", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Equalizen", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        LinearLayout mLinearLayout;
-
-        MediaPlayer mMediaPlayer;
-        Equalizer mEqualizer;
-
-        int lowerEqualizerBandLevel;
-        int upperEqualizerBandLevel;
-
-        short equalizerBandIndex;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
-            mLinearLayout = (LinearLayout)FindViewById(Resource.Id.GainLayout);
+            // Find local music file
+            var finder = new LocalMusicFinder();
+            var list = finder.FindMusic(ContentResolver);
 
-            //Test Source
-            mMediaPlayer = MediaPlayer.Create(this, Uri.Parse("http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
-            mMediaPlayer.Start();
+            // create media player and play first song in local music
+            // if there is no music file on the device, play it on the internet
+            var mediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse(list[0].Path ?? "http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
+            mediaPlayer.Start();
 
-            mEqualizer = new Equalizer(0, mMediaPlayer.AudioSessionId);
-            mEqualizer.SetEnabled(true);
+            // make equalizer by media player
+            var equalizer = new Equalizer(0, mediaPlayer.AudioSessionId);
+            equalizer.SetEnabled(true);
 
-            int frequencyBandCount = mEqualizer.NumberOfBands;
+            // and initialize layout by equalizer
+            LinearLayout linearLayout = (LinearLayout)FindViewById(Resource.Id.GainLayout);
+            InitializeLayoutByEqualizer(linearLayout, equalizer);
+        }
 
-            lowerEqualizerBandLevel = mEqualizer.GetBandLevelRange()[0];
-            upperEqualizerBandLevel = mEqualizer.GetBandLevelRange()[1];
+        private void InitializeLayoutByEqualizer(ViewGroup layout, Equalizer equalizer)
+        {
+            int frequencyBandCount = equalizer.NumberOfBands;
+
+            int lowerEqualizerBandLevel = equalizer.GetBandLevelRange()[0];
+            int upperEqualizerBandLevel = equalizer.GetBandLevelRange()[1];
+            short equalizerBandIndex;
 
             for (int i = 0; i < frequencyBandCount; i++)
             {
@@ -55,10 +58,10 @@ namespace EQ
 
                 frequencyHeaderTextView.Gravity = GravityFlags.CenterHorizontal;
 
-                string BandFrequency = ConvertTokHz(mEqualizer.GetCenterFreq(equalizerBandIndex) / 1000);
+                string BandFrequency = ConvertTokHz(equalizer.GetCenterFreq(equalizerBandIndex) / 1000);
                 frequencyHeaderTextView.SetText(BandFrequency, TextView.BufferType.Normal);
 
-                mLinearLayout.AddView(frequencyHeaderTextView);
+                layout.AddView(frequencyHeaderTextView);
                 #endregion
 
                 #region SeekBar
@@ -94,25 +97,25 @@ namespace EQ
                 seekBar.LayoutParameters = layoutParams;
 
                 seekBar.Max = upperEqualizerBandLevel - lowerEqualizerBandLevel;
-                seekBar.Progress = mEqualizer.GetBandLevel(equalizerBandIndex);
+                seekBar.Progress = equalizer.GetBandLevel(equalizerBandIndex);
 
                 seekBar.ProgressChanged += (s, e) =>
                 {
-                    mEqualizer.SetBandLevel(equalizerBandIndex, (short)(e.Progress + lowerEqualizerBandLevel));
+                    equalizer.SetBandLevel(equalizerBandIndex, (short)(e.Progress + lowerEqualizerBandLevel));
                 };
 
                 rowLinearLayout.AddView(lowerBandLevelTextView);
                 rowLinearLayout.AddView(seekBar);
                 rowLinearLayout.AddView(upperBandLevelTextView);
 
-                mLinearLayout.AddView(rowLinearLayout);
+                layout.AddView(rowLinearLayout);
                 #endregion
             }
         }
-
+        
         private string ConvertTokHz(int Freq)
         {
-            if(Freq <= 1000)
+            if (Freq <= 1000)
             {
                 return Freq + " Hz";
             }
