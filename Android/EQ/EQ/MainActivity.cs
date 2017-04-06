@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Media;
 using Android.Media.Audiofx;
 using Android.Net;
@@ -8,7 +9,7 @@ using Android.Widget;
 
 namespace EQ
 {
-    [Activity(Label = "EQ", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Equalizen", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         LinearLayout mLinearLayout;
@@ -26,10 +27,13 @@ namespace EQ
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
 
+            var button = FindViewById<Button>(Resource.Id.btn_start);
+            button.Click += Button_Click;
+
             mLinearLayout = (LinearLayout)FindViewById(Resource.Id.GainLayout);
 
             //Test Source
-            mMediaPlayer = MediaPlayer.Create(this, Uri.Parse("http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
+            mMediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse("http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
             mEqualizer = new Equalizer(0, mMediaPlayer.AudioSessionId);
             mEqualizer.SetEnabled(true);
 
@@ -53,6 +57,12 @@ namespace EQ
 
                 mLinearLayout.AddView(frequencyHeaderTextView);
             }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            var finder = new LocalMusicFinder();
+            var list = finder.FindMusic(ContentResolver);
         }
 
         private string ConvertTokHz(int Freq)
