@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Equalizen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apS-sI-jaa">
+                                <rect key="frame" x="56" y="451" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="E3D-YV-fpn"/>
+                                    <constraint firstAttribute="height" constant="50" id="ktj-z4-3fS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="REPLAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Replay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s80-LA-oQv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-Bg-FBA">
+                                <rect key="frame" x="269" y="451" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A0h-px-JNT"/>
+                                    <constraint firstAttribute="width" constant="50" id="Miq-2Y-M58"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="PUASE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ybc-kg-JkT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIq-ss-ivV">
+                                <rect key="frame" x="162" y="451" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="LeN-04-bh7"/>
+                                    <constraint firstAttribute="height" constant="50" id="ahN-dx-acj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="PLAY"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iZp-KA-wg2"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wxR-hu-niR">
+                                <rect key="frame" x="66" y="419" width="243" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.07045561820268631" green="0.074458427727222443" blue="0.078617654740810394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wxR-hu-niR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="5Kd-CS-efr"/>
+                            <constraint firstItem="apS-sI-jaa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="142.5" id="EME-yO-dIY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6fH-Bg-FBA" secondAttribute="trailing" constant="40" id="FVi-r7-uuX"/>
+                            <constraint firstItem="wxR-hu-niR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iof-NV-OvP"/>
+                            <constraint firstItem="apS-sI-jaa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="M76-yc-RPO"/>
+                            <constraint firstItem="6fH-Bg-FBA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="142.5" id="NhI-7l-IVa"/>
+                            <constraint firstItem="qIq-ss-ivV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="142.5" id="PMD-wy-3Md"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wxR-hu-niR" secondAttribute="trailing" constant="50" id="SLb-RF-5fK"/>
+                            <constraint firstItem="qIq-ss-ivV" firstAttribute="top" secondItem="wxR-hu-niR" secondAttribute="bottom" constant="30" id="cJY-IZ-kAa"/>
+                            <constraint firstItem="qIq-ss-ivV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cuZ-3V-aN9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="wxR-hu-niR" id="mdu-J1-dza"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
