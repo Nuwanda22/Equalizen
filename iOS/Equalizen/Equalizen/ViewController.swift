@@ -7,65 +7,60 @@
 //
 
 import UIKit
-import AVFoundation
+import MediaPlayer
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var statusText: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
     
-    var audioPlayer = AVAudioPlayer()
-
+    let musicPlayer = MPMusicPlayerController()
+    let mediaQuery = MPMediaQuery.songs()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "여대앞에사는남자", ofType: "mp3")!))
-            audioPlayer.prepareToPlay()
+        statusText.text = musicPlayer.nowPlayingItem?.title
+        
+        NSLog("View Loaded")
+    }
+    
+    @IBAction func Action(_ sender: UIButton) {
+        
+        NSLog("Button Tapped")
+        
+        let currentTitle = sender.currentTitle
+        
+        switch currentTitle! {
+        case "NEXT":
+            musicPlayer.setQueue(with: mediaQuery)
+            musicPlayer.play()
+            statusText.text = musicPlayer.nowPlayingItem?.title
+            actionButton.setTitle("PAUSE", for: UIControlState.normal)
+            break
             
-            let audioSession = AVAudioSession.sharedInstance()
+        case "PLAY":
+            musicPlayer.play()
+            statusText.text = musicPlayer.nowPlayingItem?.title
+            actionButton.setTitle("PAUSE", for: UIControlState.normal)
+            break
             
-            do {
-                try audioSession.setCategory(AVAudioSessionCategoryPlayback)
-                
-                Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.UpdateProgressView), userInfo: nil, repeats: true)
-                progressView.setProgress(Float(audioPlayer.currentTime / audioPlayer.duration), animated: false)
-            }
+        case "PAUSE":
+            musicPlayer.pause()
+            actionButton.setTitle("PLAY", for: UIControlState.normal)
+            break
             
-        } catch {
-            NSLog("Error")
+        default:
+            break
         }
     }
     
-    func UpdateProgressView(){
-        
-        if audioPlayer.isPlaying {
-            progressView.setProgress(Float(audioPlayer.currentTime/audioPlayer.duration), animated: true)
-        }
-        
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func Play(_ sender: Any) {
-        audioPlayer.play()
-    }
-    
-    @IBAction func Replay(_ sender: Any) {
-        if audioPlayer.isPlaying {
-            audioPlayer.currentTime = 0.0
-            audioPlayer.play()
-        } else {
-            
-        }
-    }
-
-    @IBAction func Pause(_ sender: Any) {
-        if audioPlayer.isPlaying {
-            audioPlayer.pause()
-        }
-    }
 }
 
