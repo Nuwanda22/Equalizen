@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  Equalizen
+//  Equlizer
 //
-//  Created by MorisHenry on 4/6/17.
+//  Created by MorisHenry on 4/25/17.
 //  Copyright © 2017 altair. All rights reserved.
 //
 
 import UIKit
-import MediaPlayer
 import CoreData
 
 @UIApplicationMain
@@ -15,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         return true
     }
 
@@ -52,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Equalizen")
+        let container = NSPersistentContainer(name: "Equlizer")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

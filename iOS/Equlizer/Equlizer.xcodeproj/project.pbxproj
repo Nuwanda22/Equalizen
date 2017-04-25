@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53A7743C1E95CB48003A1ECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7743B1E95CB48003A1ECE /* AppDelegate.swift */; };
-		53A7743E1E95CB48003A1ECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7743D1E95CB48003A1ECE /* ViewController.swift */; };
-		53A774411E95CB48003A1ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A7743F1E95CB48003A1ECE /* Main.storyboard */; };
-		53A774441E95CB48003A1ECE /* Equalizen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53A774421E95CB48003A1ECE /* Equalizen.xcdatamodeld */; };
-		53A774491E95CB48003A1ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A774471E95CB48003A1ECE /* LaunchScreen.storyboard */; };
-		53A774511E95CE54003A1ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53A774501E95CE54003A1ECE /* Assets.xcassets */; };
+		53C32BE61EAEE59500C7688C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C32BE51EAEE59500C7688C /* AppDelegate.swift */; };
+		53C32BEE1EAEE59500C7688C /* Equlizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53C32BEC1EAEE59500C7688C /* Equlizer.xcdatamodeld */; };
+		53C32BF01EAEE59500C7688C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C32BEF1EAEE59500C7688C /* Assets.xcassets */; };
+		53C32BF31EAEE59500C7688C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C32BF11EAEE59500C7688C /* LaunchScreen.storyboard */; };
+		53C32BFB1EAEE5B800C7688C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C32BFA1EAEE5B800C7688C /* ViewController.swift */; };
+		53C32BFD1EAEE5D400C7688C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C32BFC1EAEE5D400C7688C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		53A774381E95CB48003A1ECE /* Equalizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equalizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		53A7743B1E95CB48003A1ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		53A7743D1E95CB48003A1ECE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		53A774401E95CB48003A1ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		53A774431E95CB48003A1ECE /* Equalizen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Equalizen.xcdatamodel; sourceTree = "<group>"; };
-		53A774481E95CB48003A1ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		53A7744A1E95CB48003A1ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53A774501E95CE54003A1ECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53C32BE21EAEE59500C7688C /* Equlizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equlizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53C32BE51EAEE59500C7688C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53C32BED1EAEE59500C7688C /* Equlizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Equlizer.xcdatamodel; sourceTree = "<group>"; };
+		53C32BEF1EAEE59500C7688C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53C32BF21EAEE59500C7688C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53C32BF41EAEE59500C7688C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53C32BFA1EAEE5B800C7688C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53C32BFC1EAEE5D400C7688C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		53A774351E95CB48003A1ECE /* Frameworks */ = {
+		53C32BDF1EAEE59500C7688C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,74 +37,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53A7742F1E95CB48003A1ECE = {
+		53C32BD91EAEE59500C7688C = {
 			isa = PBXGroup;
 			children = (
-				53A7743A1E95CB48003A1ECE /* Equalizen */,
-				53A774391E95CB48003A1ECE /* Products */,
+				53C32BE41EAEE59500C7688C /* Equlizer */,
+				53C32BE31EAEE59500C7688C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		53A774391E95CB48003A1ECE /* Products */ = {
+		53C32BE31EAEE59500C7688C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53A774381E95CB48003A1ECE /* Equalizen.app */,
+				53C32BE21EAEE59500C7688C /* Equlizer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53A7743A1E95CB48003A1ECE /* Equalizen */ = {
+		53C32BE41EAEE59500C7688C /* Equlizer */ = {
 			isa = PBXGroup;
 			children = (
-				53A774501E95CE54003A1ECE /* Assets.xcassets */,
-				53A7743B1E95CB48003A1ECE /* AppDelegate.swift */,
-				53A7743D1E95CB48003A1ECE /* ViewController.swift */,
-				53A7743F1E95CB48003A1ECE /* Main.storyboard */,
-				53A774471E95CB48003A1ECE /* LaunchScreen.storyboard */,
-				53A7744A1E95CB48003A1ECE /* Info.plist */,
-				53A774421E95CB48003A1ECE /* Equalizen.xcdatamodeld */,
+				53C32BE51EAEE59500C7688C /* AppDelegate.swift */,
+				53C32BFA1EAEE5B800C7688C /* ViewController.swift */,
+				53C32BFC1EAEE5D400C7688C /* Main.storyboard */,
+				53C32BEF1EAEE59500C7688C /* Assets.xcassets */,
+				53C32BF11EAEE59500C7688C /* LaunchScreen.storyboard */,
+				53C32BF41EAEE59500C7688C /* Info.plist */,
+				53C32BEC1EAEE59500C7688C /* Equlizer.xcdatamodeld */,
 			);
-			path = Equalizen;
+			path = Equlizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53A774371E95CB48003A1ECE /* Equalizen */ = {
+		53C32BE11EAEE59500C7688C /* Equlizer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53A7744D1E95CB48003A1ECE /* Build configuration list for PBXNativeTarget "Equalizen" */;
+			buildConfigurationList = 53C32BF71EAEE59500C7688C /* Build configuration list for PBXNativeTarget "Equlizer" */;
 			buildPhases = (
-				53A774341E95CB48003A1ECE /* Sources */,
-				53A774351E95CB48003A1ECE /* Frameworks */,
-				53A774361E95CB48003A1ECE /* Resources */,
+				53C32BDE1EAEE59500C7688C /* Sources */,
+				53C32BDF1EAEE59500C7688C /* Frameworks */,
+				53C32BE01EAEE59500C7688C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Equalizen;
-			productName = Equalizen;
-			productReference = 53A774381E95CB48003A1ECE /* Equalizen.app */;
+			name = Equlizer;
+			productName = Equlizer;
+			productReference = 53C32BE21EAEE59500C7688C /* Equlizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		53A774301E95CB48003A1ECE /* Project object */ = {
+		53C32BDA1EAEE59500C7688C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = altair;
 				TargetAttributes = {
-					53A774371E95CB48003A1ECE = {
-						CreatedOnToolsVersion = 8.3;
+					53C32BE11EAEE59500C7688C = {
+						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = XXY8NHPRX4;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 53A774331E95CB48003A1ECE /* Build configuration list for PBXProject "Equalizen" */;
+			buildConfigurationList = 53C32BDD1EAEE59500C7688C /* Build configuration list for PBXProject "Equlizer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,55 +112,47 @@
 				en,
 				Base,
 			);
-			mainGroup = 53A7742F1E95CB48003A1ECE;
-			productRefGroup = 53A774391E95CB48003A1ECE /* Products */;
+			mainGroup = 53C32BD91EAEE59500C7688C;
+			productRefGroup = 53C32BE31EAEE59500C7688C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53A774371E95CB48003A1ECE /* Equalizen */,
+				53C32BE11EAEE59500C7688C /* Equlizer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		53A774361E95CB48003A1ECE /* Resources */ = {
+		53C32BE01EAEE59500C7688C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A774491E95CB48003A1ECE /* LaunchScreen.storyboard in Resources */,
-				53A774511E95CE54003A1ECE /* Assets.xcassets in Resources */,
-				53A774411E95CB48003A1ECE /* Main.storyboard in Resources */,
+				53C32BFD1EAEE5D400C7688C /* Main.storyboard in Resources */,
+				53C32BF31EAEE59500C7688C /* LaunchScreen.storyboard in Resources */,
+				53C32BF01EAEE59500C7688C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		53A774341E95CB48003A1ECE /* Sources */ = {
+		53C32BDE1EAEE59500C7688C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A7743E1E95CB48003A1ECE /* ViewController.swift in Sources */,
-				53A774441E95CB48003A1ECE /* Equalizen.xcdatamodeld in Sources */,
-				53A7743C1E95CB48003A1ECE /* AppDelegate.swift in Sources */,
+				53C32BFB1EAEE5B800C7688C /* ViewController.swift in Sources */,
+				53C32BEE1EAEE59500C7688C /* Equlizer.xcdatamodeld in Sources */,
+				53C32BE61EAEE59500C7688C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		53A7743F1E95CB48003A1ECE /* Main.storyboard */ = {
+		53C32BF11EAEE59500C7688C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				53A774401E95CB48003A1ECE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		53A774471E95CB48003A1ECE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53A774481E95CB48003A1ECE /* Base */,
+				53C32BF21EAEE59500C7688C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -168,7 +160,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		53A7744B1E95CB48003A1ECE /* Debug */ = {
+		53C32BF51EAEE59500C7688C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -219,7 +211,7 @@
 			};
 			name = Debug;
 		};
-		53A7744C1E95CB48003A1ECE /* Release */ = {
+		53C32BF61EAEE59500C7688C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -263,29 +255,27 @@
 			};
 			name = Release;
 		};
-		53A7744E1E95CB48003A1ECE /* Debug */ = {
+		53C32BF81EAEE59500C7688C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XXY8NHPRX4;
-				INFOPLIST_FILE = Equalizen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				INFOPLIST_FILE = Equlizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = altair.Equalizen;
+				PRODUCT_BUNDLE_IDENTIFIER = altair.Equlizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		53A7744F1E95CB48003A1ECE /* Release */ = {
+		53C32BF91EAEE59500C7688C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XXY8NHPRX4;
-				INFOPLIST_FILE = Equalizen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				INFOPLIST_FILE = Equlizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = altair.Equalizen;
+				PRODUCT_BUNDLE_IDENTIFIER = altair.Equlizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -294,38 +284,37 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53A774331E95CB48003A1ECE /* Build configuration list for PBXProject "Equalizen" */ = {
+		53C32BDD1EAEE59500C7688C /* Build configuration list for PBXProject "Equlizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53A7744B1E95CB48003A1ECE /* Debug */,
-				53A7744C1E95CB48003A1ECE /* Release */,
+				53C32BF51EAEE59500C7688C /* Debug */,
+				53C32BF61EAEE59500C7688C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53A7744D1E95CB48003A1ECE /* Build configuration list for PBXNativeTarget "Equalizen" */ = {
+		53C32BF71EAEE59500C7688C /* Build configuration list for PBXNativeTarget "Equlizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53A7744E1E95CB48003A1ECE /* Debug */,
-				53A7744F1E95CB48003A1ECE /* Release */,
+				53C32BF81EAEE59500C7688C /* Debug */,
+				53C32BF91EAEE59500C7688C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		53A774421E95CB48003A1ECE /* Equalizen.xcdatamodeld */ = {
+		53C32BEC1EAEE59500C7688C /* Equlizer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				53A774431E95CB48003A1ECE /* Equalizen.xcdatamodel */,
+				53C32BED1EAEE59500C7688C /* Equlizer.xcdatamodel */,
 			);
-			currentVersion = 53A774431E95CB48003A1ECE /* Equalizen.xcdatamodel */;
-			path = Equalizen.xcdatamodeld;
+			currentVersion = 53C32BED1EAEE59500C7688C /* Equlizer.xcdatamodel */;
+			path = Equlizer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 53A774301E95CB48003A1ECE /* Project object */;
+	rootObject = 53C32BDA1EAEE59500C7688C /* Project object */;
 }
