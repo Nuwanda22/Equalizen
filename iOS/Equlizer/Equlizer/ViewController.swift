@@ -21,6 +21,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        musicPlayer.setQueue(with: mediaQuery)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
         case "NEXT":
             musicPlayer.setQueue(with: mediaQuery)
             musicPlayer.play()
-            
+            actionTarget.setTitle("PAUSE", for: UIControlState.normal)
             SetupLabels()
             
             break

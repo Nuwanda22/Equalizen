@@ -300,6 +300,7 @@
 				53C32BF91EAEE59500C7688C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
