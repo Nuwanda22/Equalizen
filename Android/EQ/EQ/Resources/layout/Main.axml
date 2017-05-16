@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-  <Button
-      android:id="@+id/AddButton"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Add Music" />
-  <Button
-      android:id="@+id/PlayButton"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Show Equalizer" />
-
-  <LinearLayout
-      android:id="@+id/MusicList"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"></LinearLayout>
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <Button
+        android:id="@+id/AddButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Music" />
+    <Button
+        android:id="@+id/PlayButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Equalizer" />
+    <LinearLayout
+        android:id="@+id/MusicList"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

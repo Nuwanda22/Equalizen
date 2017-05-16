@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Media.Audiofx;
 using Android.Media;
 
-namespace EQ
+namespace Equalizen
 {
     [Activity(Label = "PlayerActivity")]
     public class PlayerActivity : Activity
