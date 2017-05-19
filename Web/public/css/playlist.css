@@ -29,9 +29,15 @@ nav{
     width: 20vw;
     float: left;
 }
-
+#add-playlist{
+    font-size: 1.2rem;
+    border-bottom:1px solid #000;
+    text-align:left;
+    padding: 1rem 0 1rem 0.8rem;
+    cursor: pointer;
+}
 .playlist-li{
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid lightgray;
     height: 5vw;
 }
 .list-img{
@@ -61,6 +67,19 @@ nav{
     height: 100vh;
     border-right: 1px solid #000;
 }
+
+#playlist-info button{
+    background-color: #fff;
+    border: 1px solid #c5c5c5;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px #d5d5d5;
+    cursor: pointer;
+}
+
+#playlist-info h1{
+    text-shadow: 1px 1px #b5b5b5;
+}
+
 h1{
     display: inline-block;
     width: 30vw;
@@ -100,6 +119,7 @@ td{
     display: inline-block;
     text-align: center;
     font-size: 1vw;
+    border: 0.05px solid #b2b2b2;
     padding: 0.4vw 0;
 }
 .songlist-li > .song-number{
@@ -116,7 +136,7 @@ td{
     min-width: 10vw;
 }
 .songlist-li > .song-album{
-    min-width: 17vw;
+    min-width: calc(17vw - 10px);
 }
 
 #song-info{
@@ -124,4 +144,91 @@ td{
     display: inline-block;
     height: 100vh;
     width: 24vw;
+}
+#plus-btn{
+    display: inline;
+    width: 3vw;
+    height: 3vw;
+    border: 1px solid #000;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 0;
+    margin-left: 15vw;
+}
+
+#plus-btn:hover{
+    cursor: pointer;
+}
+
+#modal-bg{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#modal-container{
+    cursor: default;
+    display: none;
+    position: fixed;
+    width: 40vw;
+    height: 50vh;
+    top: 20vh;
+    left: 30vw;
+    background-color: #fff;
+}
+#modal-header{
+    height: 20%;
+    width: 100%;
+}
+#modal-content{
+    height: 60%;
+    width: 100%;
+    border-top: 0.5px solid #000;
+    border-bottom: 0.5px solid #000;
+}
+#modal-footer{
+    height: 20%;
+    width: 100%;
+}
+
+#file-input{
+    display: none;
+    height: auto;
+}
+
+#file-label{
+    display: inline-block;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+form{
+    height: 100%;
+}
+form button{
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 0;
+    margin-top: 2.5%;
+}
+
+form button:nth-child(1){
+    margin-left: 55%;
+}
+
+#file-list{
+    height: 60%;
+    overflow-y: scroll;
+    padding-left: 2rem;
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file">
+</body>
+<script>
+    const reader = new FileReader;
+    var input_file;
+    const fileInput = document.querySelector("input");
+
+    fileInput.onchange = function (event) {
+        var input_file = event.target.files[0];
+        console.log(input_file);
+
+        reader.onload = ({target: {result}}) => {
+            const data = new DataView(result);
+            data.getInt8(10); // offset
+            console.log(data);
+        };
+        reader.readAsArrayBuffer(input_file);
+    }
+
+</script>
+
+</html>

@@ -10,8 +10,28 @@
 </head>
 
 <body>
+    <div id="modal-bg">
+    </div>
+        <div id="modal-container">
+            <form action="/addSongs" method="POST" enctype="multipart/form-data">
+                <div id="modal-header">
+                    <h1>노래 업로드</h1>
+                </div>
+                <div id="modal-content">
+                    <label for="file-input" id="file-label"><i class="fa fa-upload" aria-hidden="true"></i> 파일 업로드</label>
+                    <input type="file" accept="audio/*" multiple name="songs" id="file-input" onchange="fileReader(this)" required>
+                    <ul id="file-list">
+                    </ul>
+                </div>
+                <div id="modal-footer">
+                    <button type="submit" id="submit">submit</button>
+                    <button type="button" id="cancel">cancel</button>
+                </div>
+            </form>
+        </div>
     <nav>
         <ul class="playlist">
+            <li id="add-playlist"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp;&nbsp; Create new playlist</li>
             <li class="playlist-li"><img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy album" class="list-img"><span class="list-title">Last Fantasy</span></li>
             <li class="playlist-li"><img src="../imgs/flower-bookmark.jpeg" alt="Last Fantasy album" class="list-img"><span class="list-title">꽃갈피</span></li>
             <li class="playlist-li"></li>
@@ -36,7 +56,8 @@
         <h1>Last Fantasy</h1>
         <span id="playlist-description">Last Fantasy is IU second album</span>
         <button id="play-btn"> <i class="fa fa-play" aria-hidden="true"></i> Play</button>
-        <button>Bookmark</button>
+        <button><i class="fa fa-star-o" aria-hidden="true"></i> Bookmark</button>
+        <button id="plus-btn"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
         <ul class="songlist">
             <li class="songlist-li">
                 <span class="song-number">No.</span>
@@ -65,5 +86,6 @@
 
     </section>
 </body>
+<script src="../js/player.js"></script>
 
 </html>
