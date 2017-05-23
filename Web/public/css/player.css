@@ -13,13 +13,21 @@ li{
     display: inline-block;
     font-size: 1.5rem;
     padding: 0.5rem;
-    border: 0.5px solid #000;
     text-align: center;
     min-width: 5.93rem;
+    border: 0.5px solid linear-gradient(to right,#0FC2FF ,#acebae );
+    border-bottom: 0px none #acebae;
+    background:#acebae;
+    /*background-color: linear-gradient(45deg #0FC2FF #acebae);*/
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin: 15px 5px 0px 5px;
+    cursor: pointer;
 }
+
 
 iframe{
     width: 100vw;
-    height: 94vh;
-    border: 1px #000 solid;
+    height: 92vh;
+    border: 1px #acebae none;
 }
