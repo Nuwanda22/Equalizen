@@ -2125,7 +2125,7 @@ namespace Equalizen
 			public const int notification_template_part_time = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int Player = 2130903075;
+			public const int player_fragment = 2130903075;
 			
 			// aapt resource value: 0x7f030024
 			public const int select_dialog_item_material = 2130903076;

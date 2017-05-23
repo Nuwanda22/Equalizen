@@ -13,17 +13,15 @@ using Android.Widget;
 
 using Fragment = Android.Support.V4.App.Fragment;
 using FloatingActionButton = Clans.Fab.FloatingActionButton;
+using FloatingActionMenu = Clans.Fab.FloatingActionMenu;
 
 namespace Equalizen
 {
     public class HomeFragment : Fragment
     {
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
-        }
+        private FloatingActionButton AddButton;
+        private FloatingActionButton DeleteButton;
+        private FloatingActionMenu Menu;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
