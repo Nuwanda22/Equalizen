@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeFragment.cs" />
     <Compile Include="LocalMusicFinder.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PlayerActivity.cs" />
@@ -87,9 +88,12 @@
     <AndroidResource Include="Resources\layout\toolbar.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\home_fragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml">
+    <AndroidResource Include="Resources\layout\main_activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

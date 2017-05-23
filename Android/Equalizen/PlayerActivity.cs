@@ -39,7 +39,7 @@ namespace Equalizen
 
             // create media player and play first song in local music
             // if there is no music file on the device, play it on the internet
-            var mediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse(list[0].Path ?? "http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
+            var mediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse(/*list[0].Path ?? */"http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
             //mediaPlayer.Start();
 
             // make equalizer by media player
