@@ -11,7 +11,7 @@
 
 <body>
     <audio controls id="player">
-        <source src="./together.mp3" >
+        <source src="./together.mp3">
     </audio>
     <div class="controls">
         <label>60Hz</label>
@@ -43,7 +43,11 @@
         <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 5);"></input>
         <output id="gain5">0 dB</output>
     </div>
-    </div>
+    <button type="button" id="prev">⏮</button>
+    <button type="button" id="play-state">▶</button>
+    <button type="button" id="next">⏭</button>
+    
 </body>
 <script src="../js/scripts.js"></script>
+
 </html>
