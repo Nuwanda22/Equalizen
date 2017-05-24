@@ -1,10 +1,11 @@
 //buil an equalizer with multiple biquad filters
 var isFocus = true;
 var isPlayed = true;
+
 var ctx = window.AudioContext || window.webkitAudioContext;
 var context = new ctx();
-
 var mediaElement = document.getElementById('player');
+
 var sourceNode = context.createMediaElementSource(mediaElement);
 
 // create the equalizer. It's a set of biquad Filters
@@ -39,21 +40,54 @@ function changeGain(sliderVal, nbFilter) {
 }
 
 window.onfocus = () => {
-  console.log("focus!");
   isFocus = true;
 }
+
 window.onblur = () => {
-  console.log('blur');
   isFocus = false;
 }
+
+// change play state with space bar
 window.onkeypress = (event) => {
-  console.log(event.code);
+
+  // exception can't change status when focus on play state button
+  if (document.activeElement.type === "button") {
+    document.activeElement.blur();
+  }
+
+  // check key press space bar and focus on this page
   if (event.code === "Space" && isFocus) {
+    // check song played and change play state
     if (isPlayed) {
       mediaElement.play();
+      document.getElementById('play-state').innerHTML = "⏸";
     } else if (!isPlayed) {
       mediaElement.pause();
+      document.getElementById('play-state').innerHTML = "▶";
     }
-      isPlayed = !isPlayed
+
+    isPlayed = !isPlayed
   }
 }
+
+// ended song event listener, I should implement get next song function
+mediaElement.addEventListener('ended', () => {
+  mediaElement.currentTime = 0;
+  mediaElement.play()
+  console.log('ended');
+});
+
+// play state button on click function
+document.getElementById('play-state').onclick = (event) => {
+  console.log(isPlayed);
+  if (isPlayed) {
+    mediaElement.play();
+    event.target.innerHTML = "⏸";
+  } else if (!isPlayed) {
+    mediaElement.pause();
+    event.target.innerHTML = "▶";
+  }
+  isPlayed = !isPlayed
+}
+
+// code reference from codepen 'http://codepen.io/isokol/pen/PZmxGO'
