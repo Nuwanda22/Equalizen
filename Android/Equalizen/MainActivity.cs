@@ -4,16 +4,16 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V7.App;
 
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Equalizen
 {
-    [Activity(Label = "Equalizen", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/MyTheme")]
+    [Activity(Label = "Equalizen", MainLauncher = true, Theme = "@style/MyTheme")]
     public class MainActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -39,24 +39,24 @@ namespace Equalizen
             }
         }
 
-        public static readonly int PickImageId = 1000;
+        //public static readonly int PickImageId = 1000;
 
-        private void ShowFileChooser()
-        {
-            Intent = new Intent();
-            Intent.SetType("audio/*");
-            Intent.SetAction(Intent.ActionGetContent);
+        //private void ShowFileChooser()
+        //{
+        //    Intent = new Intent();
+        //    Intent.SetType("audio/*");
+        //    Intent.SetAction(Intent.ActionGetContent);
 
-            StartActivityForResult(Intent.CreateChooser(Intent, "Select Music"), PickImageId);
-        }
+        //    StartActivityForResult(Intent.CreateChooser(Intent, "Select Music"), PickImageId);
+        //}
 
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            if ((requestCode == PickImageId) && (resultCode == Result.Ok) && (data != null))
-            {
-                var uri = data.Data;
-            }
-        }
+        //protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        //{
+        //    if ((requestCode == PickImageId) && (resultCode == Result.Ok) && (data != null))
+        //    {
+        //        var uri = data.Data;
+        //    }
+        //}
     }
 }
 

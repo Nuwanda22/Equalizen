@@ -24,11 +24,10 @@ namespace Equalizen
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             gainLayout = View.FindViewById<LinearLayout>(Resource.Id.GainLayout);
-
-            // TODO:
+            
             // Find local music file
-            var finder = new LocalMusicFinder();
-            var list = finder.FindMusic(Activity.ContentResolver);
+            //var finder = new LocalMusicFinder();
+            //var list = finder.FindMusic(Activity.ContentResolver);
 
             // create media player and play first song in local music
             // if there is no music file on the device, play it on the internet
