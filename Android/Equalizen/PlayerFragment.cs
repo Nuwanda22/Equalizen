@@ -5,41 +5,33 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Media;
+using Android.Media.Audiofx;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.Media.Audiofx;
-using Android.Media;
 
-namespace EQ
+using Fragment = Android.Support.V4.App.Fragment;
+
+namespace Equalizen
 {
-    [Activity(Label = "PlayerActivity")]
-    public class PlayerActivity : Activity
+    public class PlayerFragment : Fragment
     {
-        #region View Fields
         LinearLayout gainLayout;
-        #endregion
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Player);
-
-            #region InitializeComponent
-
-            gainLayout = (LinearLayout)FindViewById(Resource.Id.GainLayout);
-
-            #endregion
-
-            // TODO:
+            gainLayout = View.FindViewById<LinearLayout>(Resource.Id.GainLayout);
+            
             // Find local music file
-            var finder = new LocalMusicFinder();
-            var list = finder.FindMusic(ContentResolver);
+            //var finder = new LocalMusicFinder();
+            //var list = finder.FindMusic(Activity.ContentResolver);
 
             // create media player and play first song in local music
             // if there is no music file on the device, play it on the internet
-            var mediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse(list[0].Path ?? "http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
+            var mediaPlayer = MediaPlayer.Create(Activity, Android.Net.Uri.Parse(/*list[0].Path ?? */"http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
             //mediaPlayer.Start();
 
             // make equalizer by media player
@@ -48,6 +40,8 @@ namespace EQ
 
             // and initialize layout by equalizer
             InitializeLayoutByEqualizer(gainLayout, equalizer);
+
+            return inflater.Inflate(Resource.Layout.player_fragment, container, false);
         }
 
         private void InitializeLayoutByEqualizer(ViewGroup layout, Equalizer equalizer)
@@ -63,7 +57,7 @@ namespace EQ
                 equalizerBandIndex = (short)i;
 
                 #region FrequecyBands
-                TextView frequencyHeaderTextView = new TextView(this);
+                TextView frequencyHeaderTextView = new TextView(Activity);
 
                 frequencyHeaderTextView.LayoutParameters = new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MatchParent,
@@ -78,10 +72,10 @@ namespace EQ
                 #endregion
 
                 #region SeekBar
-                LinearLayout rowLinearLayout = new LinearLayout(this);
+                LinearLayout rowLinearLayout = new LinearLayout(Activity);
 
                 //Initialize lower band level
-                TextView lowerBandLevelTextView = new TextView(this);
+                TextView lowerBandLevelTextView = new TextView(Activity);
 
                 lowerBandLevelTextView.LayoutParameters = new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.WrapContent,
@@ -90,7 +84,7 @@ namespace EQ
                 lowerBandLevelTextView.SetText(lowerEqualizerBandLevel / 100 + "dB", TextView.BufferType.Normal);
 
                 //initialize upper band level
-                TextView upperBandLevelTextView = new TextView(this);
+                TextView upperBandLevelTextView = new TextView(Activity);
 
                 upperBandLevelTextView.LayoutParameters = new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.WrapContent,
@@ -105,7 +99,7 @@ namespace EQ
 
                 layoutParams.Weight = 1;
 
-                SeekBar seekBar = new SeekBar(this);
+                SeekBar seekBar = new SeekBar(Activity);
                 seekBar.Id = equalizerBandIndex;
                 seekBar.LayoutParameters = layoutParams;
 
@@ -125,6 +119,7 @@ namespace EQ
                 #endregion
             }
         }
+
         private string ConvertTokHz(int Freq)
         {
             if (Freq <= 1000)

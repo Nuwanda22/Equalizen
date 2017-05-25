@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Provider;
 using Android.Net;
 
-namespace EQ
+namespace Equalizen
 {
     class LocalMusicFinder
     {
@@ -50,6 +50,7 @@ namespace EQ
                 }
             }
 
+            cursor.Close();
             return musicList;
         }
     }
