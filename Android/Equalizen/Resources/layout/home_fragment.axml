@@ -7,7 +7,8 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:fastScrollEnabled="true" />
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fabMenu"
         android:layout_width="wrap_content"
@@ -20,13 +21,13 @@
         fab:menu_colorPressed="#F2AB00"
         fab:menu_colorRipple="#D99200">
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/addAllButton"
+            android:id="@+id/select_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_music"
             fab:fab_label="Select music" />
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fabDelete"
+            android:id="@+id/all_all_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_library_music"
