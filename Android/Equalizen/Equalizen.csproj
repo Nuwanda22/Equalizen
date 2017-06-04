@@ -75,6 +75,7 @@
     <Compile Include="LocalMusicAdapter.cs" />
     <Compile Include="LocalMusicFinder.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="ObjectTypeHelper.cs" />
     <Compile Include="PlayerFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

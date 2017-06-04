@@ -43,9 +43,9 @@ namespace Equalizen
                         {
                             Title = title,
                             Artist = artist,
-                            Path = path,
+                            FilePath = path,
                             Duration = TimeSpan.FromMilliseconds(duration),
-                            Name = name
+                            FileName = name
                         });
                     }
                 }
