@@ -16,7 +16,7 @@ namespace Equalizen
 {
     class LocalMusicFinder
     {
-        public List<LocalMusic> FindMusic(ContentResolver resolver)
+        public List<LocalMusic> FindMusics(ContentResolver resolver)
         {
             var musicList = new List<LocalMusic>();
 
@@ -55,7 +55,7 @@ namespace Equalizen
         }
     }
 
-    class LocalMusic
+    public class LocalMusic
     {
         public string Title { get; set; }
         public string Artist { get; set; }

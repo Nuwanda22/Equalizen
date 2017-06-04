@@ -13,6 +13,7 @@ using Android.Widget;
 
 using Fragment = Android.Support.V4.App.Fragment;
 using FloatingActionButton = Clans.Fab.FloatingActionButton;
+using FloatingActionMenu = Clans.Fab.FloatingActionMenu;
 
 namespace Equalizen
 {
@@ -20,28 +21,23 @@ namespace Equalizen
     {
         private FloatingActionButton addAllButton;
         private FloatingActionButton selectButton;
+        private FloatingActionMenu menu;
         private ListView listView;
-        private ArrayAdapter adapter;
+        private LocalMusicAdapter adapter;
 
-        List<Tuple<string, string>> items = new List<Tuple<string, string>>
-        {
-            new Tuple<string, string>("KNOCK KNOCK", "TWICE"),
-            new Tuple<string, string>("TT", "TWICE"),
-            new Tuple<string, string>("Very Very Very", "I.O.I")
-        };
-        
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.home_fragment, container, false);
 
+            menu = view.FindViewById<FloatingActionMenu>(Resource.Id.fabMenu);
             addAllButton = view.FindViewById<FloatingActionButton>(Resource.Id.all_all_button);
             selectButton = view.FindViewById<FloatingActionButton>(Resource.Id.select_button);
             listView = view.FindViewById<ListView>(Resource.Id.list);
 
-            adapter = new SimpleListItem2Adapter(Activity, items);
+            adapter = new LocalMusicAdapter(Activity, new List<LocalMusic>());
 
             listView.Adapter = adapter;
-
+            
             addAllButton.Click += AddAllButton_Click;
             selectButton.Click += SelectButton_Click;
             listView.ItemClick += ListView_ItemClick;
@@ -56,7 +52,7 @@ namespace Equalizen
 
         private void SelectButton_Click(object sender, EventArgs e)
         {
-            items.Add(new Tuple<string, string>("Rookie", "Red Velvet"));
+            adapter.Add(new LocalMusic { Artist = "Red Velvet", Title = "Rookie" });
             adapter.NotifyDataSetChanged();
 
             Toast.MakeText(Activity, "Select", ToastLength.Short).Show();
@@ -64,27 +60,48 @@ namespace Equalizen
 
         private void AddAllButton_Click(object sender, EventArgs e)
         {
-            Toast.MakeText(Activity, "Add all", ToastLength.Short).Show();
+            var finder = new LocalMusicFinder();
+
+            var result = finder.FindMusics(Activity.ContentResolver);
+            
+            AlertDialog.Builder builder = new AlertDialog.Builder(Activity);
+            builder.SetTitle("확인");
+            builder.SetMessage($"총 {result.Count()}개의 음악이 추가됩니다. 추가하시겠습니까?");
+            builder.SetPositiveButton("확인", (s, events) =>
+            {
+                // TODO: No duplication
+                adapter.AddAll(result.ToArray());
+                adapter.NotifyDataSetChanged();
+                menu.Close(true);
+            });
+            builder.SetNegativeButton("취소", (s, events) => 
+            {
+                menu.Close(true);
+            });
+
+            var dialog = builder.Create();
+            dialog.Show();
         }
     }
 
-    public class SimpleListItem2Adapter : ArrayAdapter<Tuple<string, string>>
+    public class LocalMusicAdapter : ArrayAdapter<LocalMusic>
     {
         Activity context;
-        public SimpleListItem2Adapter(Activity context, IList<Tuple<string, string>> objects)
+        
+        public LocalMusicAdapter(Activity context, IList<LocalMusic> objects)
             : base(context, Android.Resource.Id.Text1, objects)
         {
             this.context = context;
         }
-
+        
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
-
+            
             var item = GetItem(position);
 
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Item1;
-            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.Item2;
+            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Title;
+            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.Artist;
 
             return view;
         }
