@@ -6,10 +6,13 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+
+using Newtonsoft.Json;
 
 using Fragment = Android.Support.V4.App.Fragment;
 using FloatingActionButton = Clans.Fab.FloatingActionButton;
@@ -36,13 +39,14 @@ namespace Equalizen
 
             InitializeComponents(view);
 
-            // TODO: load saved data
-            adapter = new LocalMusicAdapter(Activity, new List<LocalMusic>());
+            // loading saved data
+            var musics = LoadData();
+            adapter = new LocalMusicAdapter(Activity, musics);
             listView.Adapter = adapter;
-            
+
             return view;
         }
-
+        
         private void InitializeComponents(View view)
         {
             menu = view.FindViewById<FloatingActionMenu>(Resource.Id.fabMenu);
@@ -56,6 +60,42 @@ namespace Equalizen
             listView.ItemLongClick += ListView_ItemLongClick;
         }
 
+        private List<LocalMusic> LoadData()
+        {
+            var data = new List<LocalMusic>();
+
+            var pref = PreferenceManager.GetDefaultSharedPreferences(Activity);
+            var json = pref.GetString("musics", null);
+
+            if (json != null)
+            {
+                data = JsonConvert.DeserializeObject<List<LocalMusic>>(json);
+            }
+            else
+            {
+                data = new List<LocalMusic>();
+            }
+
+            return data;
+        }
+
+        private void SaveData()
+        {
+            var pref = PreferenceManager.GetDefaultSharedPreferences(Activity);
+            var editor = pref.Edit();
+
+            var musics = new List<LocalMusic>();
+            for (int i = 0; i < adapter.Count; i++)
+            {
+                musics.Add(adapter.GetItem(i));
+            }
+
+            var json = JsonConvert.SerializeObject(musics);
+            editor.PutString("musics", json);
+
+            editor.Apply();
+        }
+
         private void ListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             // TODO: change to be deletable
@@ -66,7 +106,7 @@ namespace Equalizen
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var music = e.Parent.GetItemAtPosition(e.Position).Cast<LocalMusic>();
-            
+
             // TODO: show player fragment
         }
 
@@ -85,7 +125,7 @@ namespace Equalizen
             var finder = new LocalMusicFinder();
 
             var result = finder.FindMusics(Activity.ContentResolver);
-            
+
             AlertDialog.Builder builder = new AlertDialog.Builder(Activity);
             builder.SetTitle("확인");
             builder.SetMessage($"총 {result.Count()}개의 음악이 추가됩니다. 추가하시겠습니까?");
@@ -96,7 +136,7 @@ namespace Equalizen
                 adapter.NotifyDataSetChanged();
                 menu.Close(true);
             });
-            builder.SetNegativeButton("취소", (s, events) => 
+            builder.SetNegativeButton("취소", (s, events) =>
             {
                 menu.Close(true);
             });
@@ -107,7 +147,8 @@ namespace Equalizen
 
         public override void OnDestroy()
         {
-            // TODO: save data
+            // saving data
+            SaveData();
 
             base.OnDestroy();
         }
