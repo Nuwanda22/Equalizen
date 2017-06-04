@@ -32,6 +32,7 @@ namespace Equalizen
         #endregion
 
         private LocalMusicAdapter adapter;
+        public static readonly int PickAudioId = 1000;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -40,13 +41,44 @@ namespace Equalizen
             InitializeComponents(view);
 
             // loading saved data
-            var musics = LoadData();
+            var musics = new List<LocalMusic>();//LoadData();
             adapter = new LocalMusicAdapter(Activity, musics);
             listView.Adapter = adapter;
 
             return view;
         }
-        
+
+        public override void OnDestroy()
+        {
+            // saving data
+            SaveData();
+
+            base.OnDestroy();
+        }
+
+        private void ShowFileChooser()
+        {
+            var intent = new Intent();
+            intent.SetType("audio/*");
+            intent.SetAction(Intent.ActionGetContent);
+
+            StartActivityForResult(Intent.CreateChooser(intent, "Select Music"), PickAudioId);
+        }
+
+        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            if ((requestCode == PickAudioId) && (resultCode == (int)Result.Ok) && (data != null))
+            {
+                var uri = data.Data;
+                
+                // TODO: cast to LocalMusic
+
+                // TODO: No duplication
+                adapter.Add(new LocalMusic { Artist = uri.Path, Title = uri.Path });
+                adapter.NotifyDataSetChanged();
+            }
+        }
+
         private void InitializeComponents(View view)
         {
             menu = view.FindViewById<FloatingActionMenu>(Resource.Id.fabMenu);
@@ -112,10 +144,7 @@ namespace Equalizen
 
         private void SelectButton_Click(object sender, EventArgs e)
         {
-            // TODO: using file chooser
-
-            //adapter.Add(new LocalMusic { Artist = "Red Velvet", Title = "Rookie" });
-            adapter.NotifyDataSetChanged();
+            ShowFileChooser();
 
             menu.Close(true);
         }
@@ -143,14 +172,6 @@ namespace Equalizen
 
             var dialog = builder.Create();
             dialog.Show();
-        }
-
-        public override void OnDestroy()
-        {
-            // saving data
-            SaveData();
-
-            base.OnDestroy();
         }
     }
 }

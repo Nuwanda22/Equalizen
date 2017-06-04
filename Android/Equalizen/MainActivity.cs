@@ -38,25 +38,6 @@ namespace Equalizen
                 SupportFragmentManager.BeginTransaction().Add(Resource.Id.fragment, new HomeFragment()).Commit();
             }
         }
-
-        //public static readonly int PickImageId = 1000;
-
-        //private void ShowFileChooser()
-        //{
-        //    Intent = new Intent();
-        //    Intent.SetType("audio/*");
-        //    Intent.SetAction(Intent.ActionGetContent);
-
-        //    StartActivityForResult(Intent.CreateChooser(Intent, "Select Music"), PickImageId);
-        //}
-
-        //protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        //{
-        //    if ((requestCode == PickImageId) && (resultCode == Result.Ok) && (data != null))
-        //    {
-        //        var uri = data.Data;
-        //    }
-        //}
     }
 }
 
