@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomeFragment.cs" />
+    <Compile Include="LocalMusic.cs" />
+    <Compile Include="LocalMusicAdapter.cs" />
     <Compile Include="LocalMusicFinder.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PlayerFragment.cs" />

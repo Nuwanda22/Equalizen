@@ -1,4 +1,4 @@
-﻿//using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Provider;
-using Android.Net;
+
+using Uri = Android.Net.Uri;
 
 namespace Equalizen
 {
@@ -43,7 +44,7 @@ namespace Equalizen
                             Title = title,
                             Artist = artist,
                             Path = path,
-                            Duration = System.TimeSpan.FromMilliseconds(duration),
+                            Duration = TimeSpan.FromMilliseconds(duration),
                             Name = name
                         });
                     }
@@ -53,14 +54,5 @@ namespace Equalizen
             cursor.Close();
             return musicList;
         }
-    }
-
-    public class LocalMusic
-    {
-        public string Title { get; set; }
-        public string Artist { get; set; }
-        public string Path { get; set; }
-        public string Name { get; set; }
-        public System.TimeSpan Duration { get; set; }
     }
 }
