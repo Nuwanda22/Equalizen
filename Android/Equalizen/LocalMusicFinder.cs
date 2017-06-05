@@ -1,4 +1,4 @@
-﻿//using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +10,14 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Provider;
-using Android.Net;
+
+using Uri = Android.Net.Uri;
 
 namespace Equalizen
 {
     class LocalMusicFinder
     {
-        public List<LocalMusic> FindMusic(ContentResolver resolver)
+        public List<LocalMusic> FindMusics(ContentResolver resolver)
         {
             var musicList = new List<LocalMusic>();
 
@@ -42,9 +43,9 @@ namespace Equalizen
                         {
                             Title = title,
                             Artist = artist,
-                            Path = path,
-                            Duration = System.TimeSpan.FromMilliseconds(duration),
-                            Name = name
+                            FilePath = path,
+                            Duration = TimeSpan.FromMilliseconds(duration),
+                            FileName = name
                         });
                     }
                 }
@@ -53,14 +54,5 @@ namespace Equalizen
             cursor.Close();
             return musicList;
         }
-    }
-
-    class LocalMusic
-    {
-        public string Title { get; set; }
-        public string Artist { get; set; }
-        public string Path { get; set; }
-        public string Name { get; set; }
-        public System.TimeSpan Duration { get; set; }
     }
 }

@@ -26,8 +26,7 @@ namespace Equalizen
             // Set Toolber
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Equalizen";
-
+            
             // Set Status Bar
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             
@@ -37,26 +36,50 @@ namespace Equalizen
             {
                 SupportFragmentManager.BeginTransaction().Add(Resource.Id.fragment, new HomeFragment()).Commit();
             }
+
+            SupportFragmentManager.BackStackChanged += SupportFragmentManager_BackStackChanged;
+
+            toolbar.NavigationClick += (s, ev) =>
+            {
+                OnBackPressed();
+            };
         }
 
-        //public static readonly int PickImageId = 1000;
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            //change main_compat_menu
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+        
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_edit:
+                    // TODO: open the edit mode
+                    
+                    break;
 
-        //private void ShowFileChooser()
-        //{
-        //    Intent = new Intent();
-        //    Intent.SetType("audio/*");
-        //    Intent.SetAction(Intent.ActionGetContent);
+                case Resource.Id.action_remove_all:
+                    // TODO: clear list and delete saved data
 
-        //    StartActivityForResult(Intent.CreateChooser(Intent, "Select Music"), PickImageId);
-        //}
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
 
-        //protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        //{
-        //    if ((requestCode == PickImageId) && (resultCode == Result.Ok) && (data != null))
-        //    {
-        //        var uri = data.Data;
-        //    }
-        //}
+        private void SupportFragmentManager_BackStackChanged(object sender, EventArgs e)
+        {
+            if (SupportFragmentManager.BackStackEntryCount > 0)
+            {
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            }
+            else
+            {
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+            }
+        }
     }
 }
 

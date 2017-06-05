@@ -14,34 +14,98 @@ using Android.Views;
 using Android.Widget;
 
 using Fragment = Android.Support.V4.App.Fragment;
+using Uri = Android.Net.Uri;
 
 namespace Equalizen
 {
     public class PlayerFragment : Fragment
     {
-        LinearLayout gainLayout;
+        private MediaPlayer player;
+        private Uri uri;
+
+        #region Components
+
+        private LinearLayout gainLayout;
+        private Button previousButton;
+        private Button playButton;
+        private Button nextButton;
+        private ProgressBar progressBar;
+
+        #endregion
+
+        public PlayerFragment(LocalMusic music)
+        {
+            // TODO: get uri from file
+            uri = music.Uri ?? Uri.Parse(music.FilePath);
+        }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            gainLayout = View.FindViewById<LinearLayout>(Resource.Id.GainLayout);
+            var view = inflater.Inflate(Resource.Layout.player_fragment, container, false);
+
+            InitializeComponts(view);
+
+            player = MediaPlayer.Create(Activity, uri);
+            if(player == null)
+            {
+                player = MediaPlayer.Create(Activity, Uri.Parse("http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
+            }
+
+            // TODO: synchronize progress bar
             
-            // Find local music file
-            //var finder = new LocalMusicFinder();
-            //var list = finder.FindMusic(Activity.ContentResolver);
-
-            // create media player and play first song in local music
-            // if there is no music file on the device, play it on the internet
-            var mediaPlayer = MediaPlayer.Create(Activity, Android.Net.Uri.Parse(/*list[0].Path ?? */"http://flash.comic.naver.net/bgsound/8336f367-e688-11e5-be49-38eaa78b7a54.mp3"));
-            //mediaPlayer.Start();
-
             // make equalizer by media player
-            var equalizer = new Equalizer(0, mediaPlayer.AudioSessionId);
+            var equalizer = new Equalizer(0, player.AudioSessionId);
             equalizer.SetEnabled(true);
 
             // and initialize layout by equalizer
+            // TODO: load equalizing data
             InitializeLayoutByEqualizer(gainLayout, equalizer);
 
-            return inflater.Inflate(Resource.Layout.player_fragment, container, false);
+            return view;
+        }
+
+        private void InitializeComponts(View view)
+        {
+            gainLayout = view.FindViewById<LinearLayout>(Resource.Id.gain_layout);
+            previousButton = view.FindViewById<Button>(Resource.Id.prev_button);
+            playButton = view.FindViewById<Button>(Resource.Id.play_button);
+            nextButton = view.FindViewById<Button>(Resource.Id.next_button);
+            progressBar = view.FindViewById<ProgressBar>(Resource.Id.music_progress_bar);
+
+            previousButton.Click += PlayButton_Click;
+            playButton.Click += PlayButton_Click;
+            nextButton.Click += PlayButton_Click;
+        }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            var tag = button.Tag.ToString();
+            
+            switch (tag)
+            {
+                case "prev":
+                    // TODO: play previous song
+                    break;
+
+                case "play":
+                    if (player.IsPlaying)
+                    {
+                        player.Pause();
+                        button.Text = "Play";
+                    }
+                    else
+                    {
+                        player.Start();
+                        button.Text = "Pause";
+                    }
+                    break;
+
+                case "next":
+                    // TODO: play next song
+                    break;
+            }
         }
 
         private void InitializeLayoutByEqualizer(ViewGroup layout, Equalizer equalizer)
@@ -130,6 +194,13 @@ namespace Equalizen
             {
                 return (double)Freq / 1000 + " kHz";
             }
+        }
+        
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            // TODO: save equalizing data
         }
     }
 }
