@@ -1666,9 +1666,6 @@ namespace Equalizen
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0c006a
-			public const int GainLayout = 2131492970;
-			
 			// aapt resource value: 0x7f0c005d
 			public const int action0 = 2131492957;
 			
@@ -1789,6 +1786,9 @@ namespace Equalizen
 			// aapt resource value: 0x7f0c005c
 			public const int fragment = 2131492956;
 			
+			// aapt resource value: 0x7f0c006a
+			public const int gain_layout = 2131492970;
+			
 			// aapt resource value: 0x7f0c0004
 			public const int home = 2131492868;
 			
@@ -1840,8 +1840,14 @@ namespace Equalizen
 			// aapt resource value: 0x7f0c0015
 			public const int multiply = 2131492885;
 			
+			// aapt resource value: 0x7f0c006b
+			public const int music_progress_bar = 2131492971;
+			
 			// aapt resource value: 0x7f0c0020
 			public const int never = 2131492896;
+			
+			// aapt resource value: 0x7f0c006e
+			public const int next_button = 2131492974;
 			
 			// aapt resource value: 0x7f0c000f
 			public const int none = 2131492879;
@@ -1851,6 +1857,12 @@ namespace Equalizen
 			
 			// aapt resource value: 0x7f0c0034
 			public const int parentPanel = 2131492916;
+			
+			// aapt resource value: 0x7f0c006d
+			public const int play_button = 2131492973;
+			
+			// aapt resource value: 0x7f0c006c
+			public const int prev_button = 2131492972;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int progress_circular = 2131492869;

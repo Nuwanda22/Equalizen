@@ -26,7 +26,8 @@ namespace Equalizen
             // Set Toolber
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Equalizen";
+
+            // TODO: add ... button
 
             // Set Status Bar
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
@@ -36,6 +37,25 @@ namespace Equalizen
             if (bundle == null)
             {
                 SupportFragmentManager.BeginTransaction().Add(Resource.Id.fragment, new HomeFragment()).Commit();
+            }
+
+            SupportFragmentManager.BackStackChanged += SupportFragmentManager_BackStackChanged;
+
+            toolbar.NavigationClick += (s, ev) =>
+            {
+                OnBackPressed();
+            };
+        }
+
+        private void SupportFragmentManager_BackStackChanged(object sender, EventArgs e)
+        {
+            if (SupportFragmentManager.BackStackEntryCount > 0)
+            {
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            }
+            else
+            {
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             }
         }
     }

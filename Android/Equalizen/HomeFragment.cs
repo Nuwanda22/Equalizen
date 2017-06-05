@@ -71,10 +71,8 @@ namespace Equalizen
             {
                 var uri = data.Data;
                 
-                // TODO: cast to LocalMusic
-
                 // TODO: No duplication
-                adapter.Add(new LocalMusic { Artist = uri.Path, Title = uri.Path });
+                adapter.Add(new LocalMusic(uri));
                 adapter.NotifyDataSetChanged();
             }
         }
@@ -138,8 +136,8 @@ namespace Equalizen
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var music = e.Parent.GetItemAtPosition(e.Position).Cast<LocalMusic>();
-
-            // TODO: show player fragment
+            
+            FragmentManager.BeginTransaction().Add(Resource.Id.fragment, new PlayerFragment(music)).AddToBackStack(null).Commit();
         }
 
         private void SelectButton_Click(object sender, EventArgs e)
