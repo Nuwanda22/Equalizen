@@ -26,9 +26,7 @@ namespace Equalizen
             // Set Toolber
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-
-            // TODO: add ... button
-
+            
             // Set Status Bar
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             
@@ -45,6 +43,30 @@ namespace Equalizen
             {
                 OnBackPressed();
             };
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            //change main_compat_menu
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+        
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_edit:
+                    // TODO: open the edit mode
+                    
+                    break;
+
+                case Resource.Id.action_remove_all:
+                    // TODO: clear list and delete saved data
+
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
         private void SupportFragmentManager_BackStackChanged(object sender, EventArgs e)

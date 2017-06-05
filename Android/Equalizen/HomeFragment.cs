@@ -40,6 +40,9 @@ namespace Equalizen
 
             InitializeComponents(view);
 
+            listView.ChoiceMode = ChoiceMode.MultipleModal;
+            listView.SetMultiChoiceModeListener(new MultiChoiceModeListener(Activity, listView));
+
             // loading saved data
             var musics = new List<LocalMusic>();//LoadData();
             adapter = new LocalMusicAdapter(Activity, musics);
@@ -56,15 +59,6 @@ namespace Equalizen
             base.OnDestroy();
         }
 
-        private void ShowFileChooser()
-        {
-            var intent = new Intent();
-            intent.SetType("audio/*");
-            intent.SetAction(Intent.ActionGetContent);
-
-            StartActivityForResult(Intent.CreateChooser(intent, "Select Music"), PickAudioId);
-        }
-
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
         {
             if ((requestCode == PickAudioId) && (resultCode == (int)Result.Ok) && (data != null))
@@ -77,6 +71,17 @@ namespace Equalizen
             }
         }
 
+        #region Methods
+
+        private void ShowFileChooser()
+        {
+            var intent = new Intent();
+            intent.SetType("audio/*");
+            intent.SetAction(Intent.ActionGetContent);
+
+            StartActivityForResult(Intent.CreateChooser(intent, "Select Music"), PickAudioId);
+        }
+
         private void InitializeComponents(View view)
         {
             menu = view.FindViewById<FloatingActionMenu>(Resource.Id.fabMenu);
@@ -87,7 +92,7 @@ namespace Equalizen
             addAllButton.Click += AddAllButton_Click;
             selectButton.Click += SelectButton_Click;
             listView.ItemClick += ListView_ItemClick;
-            listView.ItemLongClick += ListView_ItemLongClick;
+            //listView.ItemLongClick += ListView_ItemLongClick;
         }
 
         private List<LocalMusic> LoadData()
@@ -126,6 +131,10 @@ namespace Equalizen
             editor.Apply();
         }
 
+        #endregion
+
+        #region Event Handlers
+
         private void ListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             // TODO: change to be deletable
@@ -136,7 +145,7 @@ namespace Equalizen
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var music = e.Parent.GetItemAtPosition(e.Position).Cast<LocalMusic>();
-            
+
             FragmentManager.BeginTransaction().Add(Resource.Id.fragment, new PlayerFragment(music)).AddToBackStack(null).Commit();
         }
 
@@ -170,6 +179,69 @@ namespace Equalizen
 
             var dialog = builder.Create();
             dialog.Show();
+        }
+
+        #endregion
+    }
+
+    class MultiChoiceModeListener : Java.Lang.Object, AbsListView.IMultiChoiceModeListener
+    {
+        Activity activity;
+        ListView listView;
+
+        public MultiChoiceModeListener(Activity activity, ListView listView)
+        {
+            this.activity = activity;
+            this.listView = listView;
+        }
+        
+        public bool OnActionItemClicked(ActionMode mode, IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.share:
+                    Toast.MakeText(activity, "Shared " + listView.CheckedItemCount + " items", ToastLength.Short).Show();
+                    mode.Finish();
+                    break;
+                default:
+                    Toast.MakeText(activity, "Clicked " + item.TitleFormatted, ToastLength.Short).Show();
+                    break;
+            }
+
+            return true;
+        }
+
+        public bool OnCreateActionMode(ActionMode mode, IMenu menu)
+        {
+            activity.MenuInflater.Inflate(Resource.Menu.list_select_menu, menu);
+            mode.Title = "편집할 음악을 선택하시오";
+
+            return true;
+        }
+
+        public void OnDestroyActionMode(ActionMode mode)
+        {
+            
+        }
+
+        public void OnItemCheckedStateChanged(ActionMode mode, int position, long id, bool @checked)
+        {
+            int checkedCount = listView.CheckedItemCount;
+
+            switch (checkedCount)
+            {
+                case 0:
+                    mode.Subtitle = null;
+                    break;
+                default:
+                    mode.Subtitle = checkedCount + "개 선택됨";
+                    break;
+            }
+        }
+
+        public bool OnPrepareActionMode(ActionMode mode, IMenu menu)
+        {
+            return true;
         }
     }
 }

@@ -1696,6 +1696,9 @@ namespace Equalizen
 			// aapt resource value: 0x7f0c0061
 			public const int action_divider = 2131492961;
 			
+			// aapt resource value: 0x7f0c0070
+			public const int action_edit = 2131492976;
+			
 			// aapt resource value: 0x7f0c0002
 			public const int action_menu_divider = 2131492866;
 			
@@ -1710,6 +1713,9 @@ namespace Equalizen
 			
 			// aapt resource value: 0x7f0c002a
 			public const int action_mode_close_button = 2131492906;
+			
+			// aapt resource value: 0x7f0c0071
+			public const int action_remove_all = 2131492977;
 			
 			// aapt resource value: 0x7f0c002b
 			public const int activity_chooser_view_content = 2131492907;
@@ -1923,6 +1929,9 @@ namespace Equalizen
 			
 			// aapt resource value: 0x7f0c0056
 			public const int select_dialog_listview = 2131492950;
+			
+			// aapt resource value: 0x7f0c006f
+			public const int share = 2131492975;
 			
 			// aapt resource value: 0x7f0c0041
 			public const int shortcut = 2131492929;
@@ -2169,6 +2178,25 @@ namespace Equalizen
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0d0000
+			public const int list_select_menu = 2131558400;
+			
+			// aapt resource value: 0x7f0d0001
+			public const int menu = 2131558401;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}
