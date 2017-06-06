@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Equalize/Equalize.xcodeproj">
+      location = "group:Equlizer/Equalizen/Equalizen.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../../Hero/Pods/Pods.xcodeproj">
+      location = "group:Equlizer/Equlizer.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../../Hero/Hero.xcodeproj">
+      location = "group:../../AudioUnitV3ExampleABasicAudioUnitExtensionandHostImplementation/AUv3Host/AUv3Host.xcodeproj">
    </FileRef>
 </Workspace>
