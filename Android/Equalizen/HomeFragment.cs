@@ -44,11 +44,30 @@ namespace Equalizen
             listView.SetMultiChoiceModeListener(new MultiChoiceModeListener(Activity, listView));
 
             // loading saved data
-            var musics = new List<LocalMusic>();//LoadData();
+            var musics = /*new List<LocalMusic>();*/LoadData();
             adapter = new LocalMusicAdapter(Activity, musics);
             listView.Adapter = adapter;
 
             return view;
+
+            List<LocalMusic> LoadData()
+            {
+                var data = new List<LocalMusic>();
+
+                var pref = PreferenceManager.GetDefaultSharedPreferences(Activity);
+                var json = pref.GetString("musics", null);
+
+                if (json != null)
+                {
+                    data = JsonConvert.DeserializeObject<List<LocalMusic>>(json);
+                }
+                else
+                {
+                    data = new List<LocalMusic>();
+                }
+
+                return data;
+            }
         }
 
         public override void OnDestroy()
@@ -64,7 +83,7 @@ namespace Equalizen
             if ((requestCode == PickAudioId) && (resultCode == (int)Result.Ok) && (data != null))
             {
                 var uri = data.Data;
-                
+
                 // TODO: No duplication
                 adapter.Add(new LocalMusic(uri));
                 adapter.NotifyDataSetChanged();
@@ -94,26 +113,7 @@ namespace Equalizen
             listView.ItemClick += ListView_ItemClick;
             //listView.ItemLongClick += ListView_ItemLongClick;
         }
-
-        private List<LocalMusic> LoadData()
-        {
-            var data = new List<LocalMusic>();
-
-            var pref = PreferenceManager.GetDefaultSharedPreferences(Activity);
-            var json = pref.GetString("musics", null);
-
-            if (json != null)
-            {
-                data = JsonConvert.DeserializeObject<List<LocalMusic>>(json);
-            }
-            else
-            {
-                data = new List<LocalMusic>();
-            }
-
-            return data;
-        }
-
+        
         private void SaveData()
         {
             var pref = PreferenceManager.GetDefaultSharedPreferences(Activity);
@@ -194,7 +194,7 @@ namespace Equalizen
             this.activity = activity;
             this.listView = listView;
         }
-        
+
         public bool OnActionItemClicked(ActionMode mode, IMenuItem item)
         {
             switch (item.ItemId)
@@ -221,7 +221,7 @@ namespace Equalizen
 
         public void OnDestroyActionMode(ActionMode mode)
         {
-            
+
         }
 
         public void OnItemCheckedStateChanged(ActionMode mode, int position, long id, bool @checked)

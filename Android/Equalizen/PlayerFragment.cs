@@ -172,7 +172,7 @@ namespace Equalizen
 
                 seekBar.ProgressChanged += (s, e) =>
                 {
-                    equalizer.SetBandLevel(equalizerBandIndex, (short)(e.Progress + lowerEqualizerBandLevel));
+                    equalizer.SetBandLevel(equalizerBandIndex, Convert.ToInt16((e.Progress + lowerEqualizerBandLevel) * 10));
                 };
 
                 rowLinearLayout.AddView(lowerBandLevelTextView);
@@ -198,9 +198,10 @@ namespace Equalizen
         
         public override void OnDestroy()
         {
-            base.OnDestroy();
-
+            player.Stop();
             // TODO: save equalizing data
+
+            base.OnDestroy();
         }
     }
 }
