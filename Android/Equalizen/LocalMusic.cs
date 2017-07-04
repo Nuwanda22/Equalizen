@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using Newtonsoft.Json;
+
 using Uri = Android.Net.Uri;
 
 namespace Equalizen
@@ -17,12 +19,28 @@ namespace Equalizen
 
     public class LocalMusic
     {
+        private Uri uri;
+
         public string Title { get; set; }
         public string Artist { get; set; }
         public string FilePath { get; set; }
         public string FileName { get; set; }
         public TimeSpan Duration { get; set; }
-        public Uri Uri { get; set; }
+        public string UriInfo { get; set; }
+        [JsonIgnore]
+        public Uri Uri
+        {
+            get
+            {
+                return uri ?? Uri.Parse(UriInfo ?? FilePath);
+            }
+
+            set
+            {
+                uri = value;
+                UriInfo = uri.ToString();
+            }
+        }
 
         public LocalMusic() { }
 
