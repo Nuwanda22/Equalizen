@@ -1,0 +1,59 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(to top, #ff9966, #ff5e62);
+}
+
+#sign-in-form{
+    display: inline-block;
+    margin-top: calc(384px - 9rem);
+    margin-left: 20rem;
+}
+
+#sign-up-form{
+    display: inline-block;
+    margin-left: 7rem;
+    position: relative;
+    top: 3rem;
+}
+
+#sign-in-form input, #sign-up-form input{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 17.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    margin-top :2rem; 
+    border: 0.1ch solid rgba(255, 255, 255, 0.8);
+    padding-left: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#sign-in-form button, #sign-up-form button{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 18.3rem;
+    height: 4rem;
+    font-size: 2rem;
+    background-color: #C02425;
+    color: #fff;
+    border-width: 0;
+    border-radius: 0.5rem;
+    margin-top :2rem;
+}
+
+hr{
+    display: inline-block;
+    transform: rotate(90deg);
+    width: 25rem;
+    height: 4px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    position: relative;
+    bottom: 7.5rem;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div id="modal-bg">
+    </div>
+    <div id="modal-container">
+        <form action="/addSongs" method="POST" enctype="multipart/form-data">
+            <div id="modal-header">
+                <h1>노래 업로드</h1>
+            </div>
+            <div id="modal-content">
+                <iframe src="./html/audioUploader.html" frameborder="0"></iframe>
+                    </ul>-->
+            </div>
+        </form>
+    </div>
+    
+    <section id="playlist-info">
+        <!--<img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy" id="playlist-cover">-->
+        <h1>Playlist</h1>
+        <!--<span id="playlist-description">Last Fantasy is IU second album</span>-->
+        <!--<button id="play-btn"> <i class="fa fa-play" aria-hidden="true"></i> Play</button>-->
+        <!--<button><i class="fa fa-star-o" aria-hidden="true"></i> Bookmark</button>-->
+        <button id="plus-btn"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+        <ul class="songlist">
+            <li class="songlist-li">
+                <span class="song-number">No.</span>
+                <span class="song-title">곡명</span>
+                <span class="song-artist">아티스트</span>
+                <span class="song-album">앨범</span>
+            </li>
+            <%for( i in songs){%>
+            <li class="songlist-li" ondblclick="getThisSongURL(this)">
+                <input type="text" value= "<%= songs[i].songURL %>" hidden>
+                <span class="song-number"><%= parseInt(i)+1 %></span>
+                <span class="song-title"><%= songs[i].title %></span>
+                <span class="song-artist"><%= songs[i].artist %></span>
+                <span class="song-album"><%= songs[i].album %></span>
+            </li>
+            <%}%>
+            <!--<li class="songlist-li" ondblclick="getThisSongURL(this)">
+                <input type="text" value="07. HAPPY TOGETHER.mp3" hidden><span class="song-number">1</span>
+                <span class="song-title">Hello world</span>
+                <span class="song-time">4:43</span>
+                <span class="song-artist">DevK</span>
+                <span class="song-album">Developer</span>
+            </li>
+            <li class="songlist-li">
+                <span class="song-number">2</span>
+                <span class="song-title">너랑 나</span>
+                <span class="song-time">3 : 31</span>
+                <span class="song-artist">IU</span>
+                <span class="song-album">Last Fantasy</span>
+            </li>
+            <li class="songlist-li">
+                <span class="song-number">3</span>
+                <span class="song-title">비밀</span>
+                <span class="song-time">4 : 27</span>
+                <span class="song-artist">IU</span>
+                <span class="song-album">Last Fantasy</span>
+            </li>-->
+        </ul>
+    </section>
+    <section id="song-info">
+
+        <audio controls id="player">
+        </audio>
+        <div class="controls">
+            <label>60Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 0);"></input>
+            <output id="gain0">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>170Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 1);"></input>
+            <output id="gain1">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>350Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 2);"></input>
+            <output id="gain2">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>1000Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 3);"></input>
+            <output id="gain3">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>3500Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 4);"></input>
+            <output id="gain4">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>10000Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 5);"></input>
+            <output id="gain5">0 dB</output>
+        </div>
+        <button type="button" id="prev">⏮</button>
+        <button type="button" id="play-state">▶</button>
+        <button type="button" id="next">⏭</button>
+    </section>
+</body>
+<script src="../js/player.js"></script>
+<script src="../js/scripts.js"></script>
+</html>

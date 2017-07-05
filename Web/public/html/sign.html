@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/sign.css">
+    <title>HIPICK</title>
+</head>
+<body>
+    <form action="/signin" method="POST" id="sign-in-form">
+        <input type="text" name="id" required placeholder="E-mail"> <br>
+        <input type="password" name="pwd" required placeholder="Password"> <br>
+        <button>Sign in</button>
+    </form>
+    <span style="font-size:20rem;color:#fff;margin-left:7rem;font-weight:lighter;">|</span>
+    <form action="/signup" method="POST" id="sign-up-form">
+        <input type="text" name="id" required placeholder="ID"> <br>
+        <input type="password" name="pwd" required placeholder="Password"> <br>
+        <input type="text" name="name" required placeholder="User Name"><br>
+        <button>Sign up</button>
+    </form>
+</body>
+</html>

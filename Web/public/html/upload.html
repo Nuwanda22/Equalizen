@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/addSongs" method="POST" enctype="multipart/form-data">
+        <div id="modal-header">
+            <h1>노래 업로드</h1>
+        </div>
+        <div id="modal-content">
+            <label for="file-input" id="file-label"><i class="fa fa-upload" aria-hidden="true"></i> 파일 업로드</label>
+            <input type="file" accept="audio/*" multiple name="songs" id="file-input" onchange="fileReader(this)" required>
+            <ul id="file-list">
+            </ul>
+        </div>
+        <div id="modal-footer">
+            <button type="button" id="submit">submit</button>
+            <button type="button" id="cancel">cancel</button>
+        </div>
+    </form>
+</body>
+<script>
+</script>
+</html>

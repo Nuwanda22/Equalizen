@@ -7,56 +7,37 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <div id="modal-bg">
     </div>
-        <div id="modal-container">
-            <form action="/addSongs" method="POST" enctype="multipart/form-data">
-                <div id="modal-header">
-                    <h1>노래 업로드</h1>
-                </div>
-                <div id="modal-content">
-                    <label for="file-input" id="file-label"><i class="fa fa-upload" aria-hidden="true"></i> 파일 업로드</label>
+    <div id="modal-container">
+        <form action="/addSongs" method="POST" enctype="multipart/form-data">
+            <div id="modal-header">
+                <h1>노래 업로드</h1>
+            </div>
+            <div id="modal-content">
+                <iframe src="./html/audioUploader.html" frameborder="0"></iframe>
+                <!--<label for="file-input" id="file-label"><i class="fa fa-upload" aria-hidden="true"></i> 파일 업로드</label>
                     <input type="file" accept="audio/*" multiple name="songs" id="file-input" onchange="fileReader(this)" required>
                     <ul id="file-list">
-                    </ul>
-                </div>
-                <div id="modal-footer">
-                    <button type="submit" id="submit">submit</button>
-                    <button type="button" id="cancel">cancel</button>
-                </div>
-            </form>
-        </div>
-    <nav>
-        <ul class="playlist">
-            <li id="add-playlist"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp;&nbsp; Create new playlist</li>
-            <li class="playlist-li"><img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy album" class="list-img"><span class="list-title">Last Fantasy</span></li>
-            <li class="playlist-li"><img src="../imgs/flower-bookmark.jpeg" alt="Last Fantasy album" class="list-img"><span class="list-title">꽃갈피</span></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-            <li class="playlist-li"></li>
-        </ul>
-    </nav>
+                    </ul>-->
+            </div>
+            <!--<div id="modal-footer">
+                <button type="submit" id="submit">submit</button>
+                <button type="button" id="cancel">cancel</button>
+            </div>-->
+        </form>
+    </div>
+    
     <section id="playlist-info">
-        <img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy" id="playlist-cover">
-        <h1>Last Fantasy</h1>
-        <span id="playlist-description">Last Fantasy is IU second album</span>
-        <button id="play-btn"> <i class="fa fa-play" aria-hidden="true"></i> Play</button>
-        <button><i class="fa fa-star-o" aria-hidden="true"></i> Bookmark</button>
+        <!--<img src="../imgs/last-fantasy.jpeg" alt="Last Fantasy" id="playlist-cover">-->
+        <h1>Playlist</h1>
+        <!--<span id="playlist-description">Last Fantasy is IU second album</span>-->
+        <!--<button id="play-btn"> <i class="fa fa-play" aria-hidden="true"></i> Play</button>-->
+        <!--<button><i class="fa fa-star-o" aria-hidden="true"></i> Bookmark</button>-->
         <button id="plus-btn"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
         <ul class="songlist">
             <li class="songlist-li">
@@ -66,15 +47,23 @@
                 <span class="song-artist">아티스트</span>
                 <span class="song-album">앨범</span>
             </li>
-            <li class="songlist-li">
+            <li class="songlist-li" ondblclick="getThisSongURL(this)">
+                <input type="text" value="07. HAPPY TOGETHER.mp3" hidden>
                 <span class="song-number">1</span>
+                <span class="song-title">Hello world</span>
+                <span class="song-time">4:43</span>
+                <span class="song-artist">DevK</span>
+                <span class="song-album">Developer</span>
+            </li>
+            <li class="songlist-li">
+                <span class="song-number">2</span>
                 <span class="song-title">너랑 나</span>
                 <span class="song-time">3 : 31</span>
                 <span class="song-artist">IU</span>
                 <span class="song-album">Last Fantasy</span>
             </li>
             <li class="songlist-li">
-                <span class="song-number">2</span>
+                <span class="song-number">3</span>
                 <span class="song-title">비밀</span>
                 <span class="song-time">4 : 27</span>
                 <span class="song-artist">IU</span>
@@ -83,9 +72,44 @@
         </ul>
     </section>
     <section id="song-info">
-        <audio src="" controls></audio>
+
+        <audio controls id="player">
+        </audio>
+        <div class="controls">
+            <label>60Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 0);"></input>
+            <output id="gain0">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>170Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 1);"></input>
+            <output id="gain1">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>350Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 2);"></input>
+            <output id="gain2">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>1000Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 3);"></input>
+            <output id="gain3">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>3500Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 4);"></input>
+            <output id="gain4">0 dB</output>
+        </div>
+        <div class="controls">
+            <label>10000Hz</label>
+            <input type="range" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 5);"></input>
+            <output id="gain5">0 dB</output>
+        </div>
+        <button type="button" id="prev">⏮</button>
+        <button type="button" id="play-state">▶</button>
+        <button type="button" id="next">⏭</button>
     </section>
 </body>
 <script src="../js/player.js"></script>
-
+<script src="../js/scripts.js"></script>
 </html>

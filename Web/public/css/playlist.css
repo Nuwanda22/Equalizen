@@ -66,7 +66,7 @@ nav{
 #playlist-info{
     display: inline-block;
     float: left;
-    width: 55vw;
+    width: 75vw;
     height: 100vh;
     color: #000;
     background: #f5f5f5;
@@ -134,20 +134,20 @@ td{
     background: #b5b5b5;
 }
 .songlist-li > .song-number{
-    min-width: 5vw;
+    min-width: 8vw;
 }
 .songlist-li > .song-title{
-    min-width: 15vw;
+    min-width: 29vw;
 }
 .songlist-li > .song-time{
-    min-width: 8vw;
+    min-width: 12vw;
 }
 
 .songlist-li > .song-artist{
-    min-width: 10vw;
+    min-width: 18vw;
 }
 .songlist-li > .song-album{
-    min-width: calc(17vw - 10px);
+    min-width: calc(20vw - 10px);
 }
 
 #song-info{

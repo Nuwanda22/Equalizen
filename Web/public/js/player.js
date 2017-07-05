@@ -10,10 +10,11 @@ document.getElementById('plus-btn').onclick = function () {
  function closeModal () {
     document.getElementById('modal-container').style.display = 'none';
     document.getElementById('modal-bg').style.display = 'none';
+    document.querySelector("iframe").contentWindow.postMessage("Reset","*");
 }
 
 document.getElementById('modal-bg').onclick = closeModal;
-document.getElementById('cancel').onclick = closeModal;
+// document.getElementById('cancel').onclick = closeModal;
 
 // 
 window.onload = function(){
@@ -48,3 +49,8 @@ function fileReader(input) {
 function requestNextMusic(playlist) {
     console.log(Math.floor(Math.random() * playlist.length));
 }
+
+window.addEventListener("message",(event)=>{
+    if(event.data == "Close")
+        alert("Hello world");
+});

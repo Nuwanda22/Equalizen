@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            // document.getElementById("hello").onclick = () => {
+            //     window.parent.postMessage("Close", "*");
+            // }
+        }
+
+        function fileReader(input) {
+            var length = input.files.length;
+            var fileList = document.getElementById('file-list');
+            fileList.innerHTML = "";
+            for (i = 0; i < length; i++) {
+                let li = document.createElement('li');
+                li.innerHTML = input.files[i].name + " &nbsp;&nbsp; |&nbsp;&nbsp;" + (input.files[i].size / (1024 * 1024)).toFixed(2) + "MB";
+                fileList.appendChild(li);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="/addSongs" method="POST" enctype="multipart/form-data">
+        <label for="file-input" id="file-label"><i class="fa fa-upload" aria-hidden="true"></i> 파일 업로드</label>
+        <input type="file" accept="audio/*" multiple name="songs" id="file-input" onchange="fileReader(this)" required>
+        <button style="float:right;margin:5px;">Submit</button>
+        <ul id="file-list">
+        </ul>
+        <!--<button type="Button" id="hello"></button>-->
+    </form>
+</body>
+
+</html>

@@ -9,7 +9,6 @@ var mediaElement = document.getElementById('player');
 var sourceNode = context.createMediaElementSource(mediaElement);
 
 // create the equalizer. It's a set of biquad Filters
-
 var filters = [];
 
 // Set filters
@@ -27,6 +26,7 @@ for (var i = 0; i < filters.length - 1; i++) {
   filters[i].connect(filters[i + 1]);
 }
 
+
 // connect the last filter to the speakers
 filters[filters.length - 1].connect(context.destination);
 
@@ -37,6 +37,18 @@ function changeGain(sliderVal, nbFilter) {
   // update output labels
   var output = document.querySelector("#gain" + nbFilter);
   output.value = value + " dB";
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','http://localhost:3000/changeEqualizer');
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+  xhr.onreadystatechange = function() {//Call a function when the state changes.
+    if(xhr.readyState == 4 && xhr.status == 200) {
+        var result = xhr.responseText;
+        result = eval("("+result+")");
+        console.log(result.val);
+    }
+  }
+  xhr.send(`{hz:${nbFilter},val:${value}}`);
 }
 
 window.onfocus = () => {
@@ -72,8 +84,10 @@ window.onkeypress = (event) => {
 
 // ended song event listener, I should implement get next song function
 mediaElement.addEventListener('ended', () => {
+  mediaElement.childNodes[1].src = './Home.mp3';
   mediaElement.currentTime = 0;
-  mediaElement.play()
+  mediaElement.load();
+  mediaElement.play();
   console.log('ended');
 });
 
@@ -89,5 +103,33 @@ document.getElementById('play-state').onclick = (event) => {
   }
   isPlayed = !isPlayed
 }
+
+function getThisSongURL(target){
+  console.log(target.children[0].value);
+  var songName = target.children[0].value;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET',"http://localhost:3000/getSong/"+songName);
+  xhr.onreadystatechange = ()=>{
+    if(xhr.readyState == 4){
+      if(xhr.status == 200){
+        console.log(xhr.responseText);
+        mediaElement.src = xhr.responseText;
+        mediaElement.play();
+      }
+    }
+  }
+  xhr.send();
+}
+
+// document.getElementById('lab').onclick = function () {
+//   mediaElement.currentTime = 0;
+//   mediaElement.pause();
+//   console.log(mediaElement.childNodes[1].src);
+//   mediaElement.childNodes[1].src = "./together.mp3";
+//   mediaElement.load();
+//   mediaElement.play();
+// }
+
+
 
 // code reference from codepen 'http://codepen.io/isokol/pen/PZmxGO'
